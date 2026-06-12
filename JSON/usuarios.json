@@ -1,0 +1,99 @@
+{
+    "usuarios": [
+        {
+            "id": "USR-001",
+            "nombre": "María González",
+            "email": "admin@eg-travel.com",
+            "password": "admin123",
+            "rol": "admin"
+        },
+        {
+            "id": "USR-002",
+            "nombre": "Carlos Mendieta",
+            "email": "agente@eg-travel.com",
+            "password": "agente123",
+            "rol": "agente"
+        },
+        {
+            "id": "USR-003",
+            "nombre": "Lucía Fernández",
+            "email": "usuario@eg-travel.com",
+            "password": "usuario123",
+            "rol": "estandar"
+        }
+    ],
+    "modulos": [
+        {
+            "nombre": "Gestión de usuarios y agencias",
+            "pagina": "M2.html",
+            "rol": "admin",
+            "casos": ["Iniciar sesión", "Gestionar usuarios", "Registrar agencia", "Cerrar sesión"]
+        },
+        {
+            "nombre": "Catálogo de rutas y navieras",
+            "pagina": "M3.html",
+            "rol": "admin",
+            "casos": ["Gestionar buques", "Registrar ruta", "Gestionar tarifas", "Consultar catálogo", "Ver ficha de buque"]
+        },
+        {
+            "nombre": "Búsqueda y disponibilidad",
+            "pagina": "M3.html",
+            "rol": "admin",
+            "casos": ["Buscar itinerarios", "Consultar disponibilidad", "Comparar itinerarios", "Guardar búsqueda"]
+        },
+        {
+            "nombre": "Reservas",
+            "pagina": "M4.html",
+            "rol": "admin",
+            "casos": ["Crear reserva", "Registrar pasajeros", "Emitir boletos", "Modificar reserva", "Cancelar reserva"]
+        },
+        {
+            "nombre": "Pagos y facturación",
+            "pagina": "M5.html",
+            "rol": "admin",
+            "casos": ["Pago en línea", "Generar factura", "Consultar historial", "Registrar transacción", "Configurar impuestos"]
+        },
+        {
+            "nombre": "Análisis y reportes",
+            "pagina": "M6.html",
+            "rol": "admin",
+            "casos": ["Ver dashboard", "Generar reportes", "Consultar ocupación", "Exportar reporte"]
+        },
+        {
+            "nombre": "Notificaciones y soporte",
+            "pagina": "M7.html",
+            "rol": "admin",
+            "casos": ["Abrir ticket", "Chat de asistencia", "Enviar correo", "Ver notificaciones"]
+        },
+        {
+            "nombre": "Catálogo de rutas",
+            "pagina": "M3.html",
+            "rol": "agente",
+            "casos": ["Consultar catálogo", "Ver ficha de buque", "Buscar itinerarios"]
+        },
+        {
+            "nombre": "Reservas",
+            "pagina": "M4.html",
+            "rol": "agente",
+            "casos": ["Crear reserva", "Registrar pasajeros", "Emitir boletos", "Modificar reserva"]
+        },
+        {
+            "nombre": "Pagos y facturación",
+            "pagina": "M5.html",
+            "rol": "agente",
+            "casos": ["Pago en línea", "Generar factura", "Consultar historial de pagos"]
+        },
+        {
+            "nombre": "Análisis",
+            "pagina": "M6.html",
+            "rol": "agente",
+            "casos": ["Ver dashboard", "Generar reportes de venta"]
+        },
+        {
+            "nombre": "Soporte",
+            "pagina": "M7.html",
+            "rol": "agente",
+            "casos": ["Abrir ticket", "Chat de asistencia", "Ver confirmación de reserva"]
+        }
+    ]
+}

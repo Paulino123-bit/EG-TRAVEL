@@ -1,0 +1,739 @@
+:root {
+    --colorAzul: #7ca3c4;
+    --colorAzul2: #0b1c30;
+    --rojo: #bb2040;
+    --rojo2: #e31b23;
+    --colorgris: gray;
+    --red: #e31e24;
+    --red-dark: #c41220;
+    --navy: #0a111f;
+    --navy-mid: #1a2332;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --text-light: #94a3b8;
+    --border: #e2e8f0;
+    --bg-light: #f0f4f8;
+    --occupied: #bfdbfe;
+    --occupied-border: #93c5fd;
+    --white: #ffffff;
+    --error: #dc2626;
+    --green: #16a34a;
+    --blue: #2563eb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+}
+
+body {
+    font-family: 'Inter';
+    color: var(--text);
+    background: var(--bg-light);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*estilos del header*/
+header nav {
+    justify-content: space-between;
+    width: 40%;
+    display: flex;
+}
+
+header nav a {
+    color: var(--colorAzul);
+    transition: 0.2s ease;
+}
+
+header nav a:hover {
+    color: var(--colorgris);
+    transform: scale(1.2);
+}
+
+header nav a:focus {
+    color: var(--rojo);
+    text-decoration: underline;
+}
+
+a.logo i {
+    color: var(--rojo2);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* TÍTULO */
+.page-header {
+    padding: 32px 40px 28px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.page-header h1 {
+    font-size: 50px;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--bg-light);
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    font-size: 20px;
+    color: var(--bg-light);
+    max-width: 720px;
+    line-height: 1.7;
+}
+
+/* ═══ LAYOUT ═══ */
+.layout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 19px;
+    background: linear-gradient(rgba(11, 44, 81, 0.85), rgba(11, 44, 81, 0.85)) ,url("../IMG/puert43.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    
+}
+.col-main{
+    width: 70%;
+}
+
+.card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+.general{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    
+}
+.card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.card-head h2 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.legend {
+    display: flex;
+    gap: 16px;
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.legend span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.dot.occupied {
+    background: var(--occupied);
+    border: 1px solid var(--occupied-border);
+}
+
+.dot.available {
+    background: var(--white);
+    border: 1px solid var(--border);
+}
+
+.dot.selected {
+    background: var(--red);
+    border: 1px solid var(--red);
+}
+
+/*  PESTAÑAS DE CUBIERTA */
+.deck-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.deck-tab {
+    background: var(--white);
+    border: 2px solid var(--border);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: var(--text-muted);
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.deck-tab.active {
+    border-color: var(--red);
+    color: var(--red);
+}
+
+.deck-info {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.deck-info strong {
+    color: var(--green);
+}
+
+/* ═══ PASAJEROS ═══ */
+.add-passenger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--red);
+}
+
+
+.passenger-chip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.passenger-chip button {
+    background: none;
+    border: none;
+    color: var(--error);
+    font-size: 12px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.field label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.field input,
+.field select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    outline: none;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: var(--navy-mid);
+}
+
+.field input.error {
+    border-color: var(--error);
+}
+
+.error {
+    display: block;
+    font-size: 11px;
+    color: var(--error);
+    margin-top: 4px;
+    min-height: 14px;
+}
+
+.btn-save-passenger {
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    padding: 11px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+/* ═══ TARJETA DE EMBARQUE ═══ */
+.boarding-pass {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.bp-header {
+    background: var(--red);
+    color: var(--white);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bp-tag {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    opacity: 0.85;
+}
+
+.bp-header h3 {
+    font-size: 16px;
+    font-weight: 800;
+    margin-top: 2px;
+}
+
+.bp-ship-icon {
+    font-size: 28px;
+}
+
+.bp-body {
+    background: var(--navy);
+    color: var(--white);
+    padding: 20px;
+}
+
+.bp-row {
+    margin-bottom: 12px;
+}
+
+.bp-row span {
+    display: block;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 2px;
+}
+
+.bp-row .dato { /* editamos el texto al llegar a la ticket*/
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+
+
+.qr-area {
+    text-align: center;
+    margin: 20px 0 16px;
+}
+
+.qr-area img {
+    background: var(--white);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.res-id {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 8px;
+}
+
+.btn-download {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--white);
+    color: var(--navy);
+    border: none;
+    padding: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    border-radius: 6px;
+}
+
+.btn-download svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ═══ GESTIÓN ═══ */
+.management-card h2 {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 12px;
+}
+
+.mgmt-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    text-align: left;
+    transition: border-color 0.2s;
+}
+
+.mgmt-item:hover {
+    border-color: var(--text-light);
+}
+
+.mgmt-item.danger .mgmt-text {
+    color: var(--error);
+}
+
+.mgmt-icon {
+    font-size: 16px;
+    width: 24px;
+    text-align: center;
+}
+
+.mgmt-text {
+    flex: 1;
+}
+
+.tag-available {
+    font-size: 9px;
+    font-weight: 700;
+    background: #dbeafe;
+    color: var(--blue);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.mgmt-arrow {
+    color: var(--text-light);
+    font-size: 18px;
+}
+
+/* ═══ FOOTER ═══ */
+.site-footer {
+    background: var(--navy);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 32px;
+    max-width: 1280px;
+    margin: 0 auto 24px;
+}
+
+.footer-brand .brand {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.footer-brand p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.footer-col h4 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.footer-col a {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+}
+
+.footer-col a:hover {
+    color: var(--white);
+}
+
+.footer-copy {
+    text-align: right;
+    font-size: 11px;
+    max-width: 1280px;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.35);
+}
+
+/* ═══ MODALES ═══ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 17, 31, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 24px;
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-overlay:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 32px 28px 28px;
+    width: 100%;
+    max-width: 440px;
+    position: relative;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+    box-shadow: 0 24px 48px rgba(10, 17, 31, 0.25);
+    transform: translateY(16px) scale(0.97);
+    transition: transform 0.25s ease;
+}
+
+.modal-overlay:not(.hidden) .modal {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--text-muted);
+    transition: background 0.2s, color 0.2s;
+}
+
+.modal-close:hover {
+    background: var(--border);
+    color: var(--navy);
+}
+
+.modal h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 16px;
+    padding-right: 32px;
+}
+
+.modal .field {
+    margin-bottom: 14px;
+}
+
+.modal-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.danger-text {
+    color: var(--error);
+}
+
+.modal-view {
+    display: none;
+}
+
+.modal-view.active {
+    display: block;
+}
+
+.back-btn,
+.text-link {
+    background: none;
+    border: none;
+    color: var(--red);
+    font-size: 13px;
+    padding: 0;
+}
+
+.modal-switch {
+    text-align: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 12px;
+}
+
+.btn-primary {
+    width: 100%;
+    background: var(--red);
+    color: var(--white);
+    border: none;
+    padding: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 6px;
+    margin-top: 8px;
+}
+
+.btn-secondary {
+    flex: 1;
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.btn-danger {
+    flex: 1;
+    background: var(--error);
+    color: var(--white);
+    border: none;
+    padding: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 6px;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.success-box {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: var(--green);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--navy);
+    color: var(--white);
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 1100;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* ═══ IMPRESIÓN PDF ═══ */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #printArea,
+    #printArea * {
+        visibility: visible;
+    }
+
+    #printArea {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-header,
+    .layout,
+    .site-footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .modal {
+        padding: 28px 20px 24px;
+        max-height: calc(100vh - 32px);
+    }
+
+    .modal-overlay {
+        padding: 16px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cabin-grid {
+        max-width: 100%;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-copy {
+        text-align: center;
+    }
+}

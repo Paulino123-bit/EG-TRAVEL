@@ -1,0 +1,44 @@
+{
+    "rutas": [
+        {
+            "codigo": "RUT-001",
+            "nombre": "Corredor Atlántico Norte",
+            "puertoOrigen": "Malabo",
+            "puertoDestino": "Bata",
+            "distancia": "280 km",
+            "duracion": "12 horas"
+        },
+        {
+            "codigo": "RUT-002",
+            "nombre": "Línea Ecuatorial Express",
+            "puertoOrigen": "Bata",
+            "puertoDestino": "Luba",
+            "distancia": "95 km",
+            "duracion": "6 horas"
+        },
+        {
+            "codigo": "RUT-003",
+            "nombre": "Ruta del Golfo de Guinea",
+            "puertoOrigen": "Malabo",
+            "puertoDestino": "Douala",
+            "distancia": "120 nm",
+            "duracion": "18 horas"
+        },
+        {
+            "codigo": "RUT-004",
+            "nombre": "Conexión Insular Sur",
+            "puertoOrigen": "Luba",
+            "puertoDestino": "Annobón",
+            "distancia": "210 nm",
+            "duracion": "24 horas"
+        },
+        {
+            "codigo": "RUT-005",
+            "nombre": "Puente Logístico Centro",
+            "puertoOrigen": "Bata",
+            "puertoDestino": "Malabo",
+            "distancia": "280 km",
+            "duracion": "11 horas"
+        }
+    ]
+}

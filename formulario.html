@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EG-TRAVEL — Acceso</title>
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/fromulario.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header class="header-solo-logo">
+        <a href="./index.html" class="logo">
+            <i class='bx bx-anchor'></i>
+            <h3>E.G.TRAVELS</h3>
+        </a>
+    </header>
+
+    <main class="registro-page">
+        <section class="registro-cuadro">
+            <div class="form-box">
+
+                <!-- LOGIN: solo admin y agente -->
+                <div class="form-view active" id="viewLogin">
+                    <h1 class="form-title">Centro de Control</h1>
+                    <p class="form-subtitle">Acceso para administrador y agente de venta.</p>
+
+                    <form id="loginForm">
+                        <div class="field-group">
+                            <label for="email">CORREO ELECTRÓNICO</label>
+                            <input type="email" id="email" placeholder="admin@eg-travel.com">
+                            <span class="error-msg" id="emailError"></span>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="password">CONTRASEÑA</label>
+                            <input type="password" id="password" placeholder="••••••••">
+                            <span class="error-msg" id="passwordError"></span>
+                        </div>
+
+                        <button type="submit" class="btn-signin">INICIAR SESIÓN</button>
+                    </form>
+                </div>
+
+                <!-- REGISTRO: usuario estándar (reserva o pago) -->
+                <div class="form-view" id="viewRegister">
+                    <button type="button" class="back-link" id="backFromRegister">← Volver</button>
+
+                    <h1 class="form-title" id="tituloRegistro">Sus datos</h1>
+                    <p class="form-subtitle" id="subtituloRegistro">Complete el formulario para continuar.</p>
+
+                    <form id="registerForm">
+                        <div class="field-group">
+                            <label for="fullName">NOMBRE COMPLETO</label>
+                            <input type="text" id="fullName" placeholder="Juan Pérez">
+                            <span class="error-msg" id="fullNameError"></span>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="registerEmail">CORREO ELECTRÓNICO</label>
+                            <input type="email" id="registerEmail" placeholder="nombre@email.com">
+                            <span class="error-msg" id="registerEmailError"></span>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="telefono">TELÉFONO</label>
+                            <input type="tel" id="telefono" placeholder="600 000 000">
+                            <span class="error-msg" id="telefonoError"></span>
+                        </div>
+
+                        <div class="field-group">
+                            <label for="registerPassword">CONTRASEÑA</label>
+                            <input type="password" id="registerPassword" placeholder="Mínimo 6 caracteres">
+                            <span class="error-msg" id="registerPasswordError"></span>
+                        </div>
+
+                        <button type="submit" class="btn-signin">ENVIAR DATOS</button>
+                    </form>
+
+                    <div class="success-msg hidden" id="registerSuccess">
+                        <p>Datos enviados correctamente. El agente y el administrador ya pueden ver su solicitud.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="texto-footer">
+            © 2026 EG-TRAVELS Liderando la inovacion en transporte maritimo.Todos los derechos reservados
+        </div>
+    </footer>
+
+    <script src="./JS/formulario.js"></script>
+</body>
+
+</html>

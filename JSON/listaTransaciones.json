@@ -1,0 +1,44 @@
+{
+    "transacciones": [
+        {
+            "FACTURA_ID": "F001",
+            "FECHA": "2026-06-01",
+            "CONCEPTO": "Reserva de Cabina Premium",
+            "MONTO": 1200.50,
+            "ESTADO": "Pagado",
+            "ACCIONES": "Ver Detalle"
+        },
+        {
+            "FACTURA_ID": "F002",
+            "FECHA": "2026-06-02",
+            "CONCEPTO": "Servicio de Restaurante",
+            "MONTO": 85.75,
+            "ESTADO": "Pendiente",
+            "ACCIONES": "Pagar"
+        },
+        {
+            "FACTURA_ID": "F003",
+            "FECHA": "2026-06-03",
+            "CONCEPTO": "Excursión en Puerto",
+            "MONTO": 250.00,
+            "ESTADO": "Cancelado",
+            "ACCIONES": "Revisar"
+        },
+        {
+            "FACTURA_ID": "F004",
+            "FECHA": "2026-06-04",
+            "CONCEPTO": "Spa y Bienestar",
+            "MONTO": 150.00,
+            "ESTADO": "Pagado",
+            "ACCIONES": "Ver Detalle"
+        },
+        {
+            "FACTURA_ID": "F005",
+            "FECHA": "2026-06-05",
+            "CONCEPTO": "Transporte al Aeropuerto",
+            "MONTO": 60.00,
+            "ESTADO": "Pendiente",
+            "ACCIONES": "Pagar"
+        }
+    ]
+}

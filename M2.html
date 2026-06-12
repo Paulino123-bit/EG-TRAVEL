@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/M2.css">
+    
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <i class='bx bx-anchor'></i>
+            <h3>E.G.TRAVELS</h3>
+        </div>
+        <nav id="navPrincipal">
+            <a href="./index.html">Inicio</a>
+            <a href="./M2.html" class="active" aria-current="page">Agencia</a>
+            <a href="./M3.html">Rutas</a>
+            <a href="./M4.html">Reserva</a>
+            <a href="./M5.html">Facturacion</a>
+            <a href="./M6.html">Analisis</a>
+            <a href="./M7.html">Soporte</a>
+        </nav>
+    </header>
+    <section class="container1">
+        <div class="notificacion">
+            <h1>Control maestro de<br> Agencias</h1>
+            <br>
+            <h4>Centralice las operaciones globales de sus socios. Monitoreo <br>
+                en tiempo real, verificacion de credenciales y optimizacion de la red <br>
+                logistica marina</h4>
+            <br>
+            <p id="cajaRoja"> &#10133; Registrar agencia </p>
+        </div>
+        <div class="panel">
+            <h5>ESTADO DE LA RED GLOBAL</h5>
+            <h1>2,3+</h1>
+            aumentos en el ultimo semestre
+        </div>
+    </section>
+    <!-- el main-->
+    <main>
+        <div class="modal" id="modal">
+            <div class="modal-contenido">
+                <div class="card">
+                    <h1>Únete al Ecosistema Logístico Global</h1>
+                    <p>Eg-Travel conecta agencias de
+                        viaje premium con la red de transporte marítimo más avanzada del pais.</p>
+                </div>
+                <!-- Formulario -->
+                <form id="Form">
+                    <div class="input">
+                        <div class="input">
+                            <label class="label">NOMBRE DE LA AGENCIA</label>
+                            <input id="agencia" class="inputs" type="text" placeholder="Ej. Viteoca Logistics SA">
+                            <div class="alerta1" id="alerta1"></div>
+                        </div>
+                        <div class="input">
+                            <label class="label">ID COMERCIAL (RUC/CIF)</label>
+                            <input id="cod-id" class="inputs" type="text" placeholder="Ej. 20600000000">
+                            <div id="alerta2"></div>
+                        </div>
+                        <div class="input">
+                            <label class="label">REPRESENTANTE LEGAL</label>
+                            <input id="nom" class="inputs" type="text" placeholder="Nombre completo">
+                            <div id="alerta3"></div>
+                        </div>
+                        <div class="input">
+                            <label class="label">CORREO DE CONTACTO</label>
+                            <input id="email" class="inputs" type="email" placeholder="nombre@gmail.com">
+                            <div id="alerta4"></div>
+                        </div>
+                        <div class="input">
+                            <label class="label">TELÉFONO</label>
+                            <input id="contacto" class="inputs" type="tel" placeholder="+240 000 000 000">
+                            <div id="alerta5"></div>
+                        </div>
+                    </div>
+
+                    <!--  Documentos -->
+                    <div class="doc">
+                        <i class='bx bx-cloud-upload'></i>
+                        <h4>Documentos Comerciales</h4>
+                    </div>
+                    <div class="doc1">
+                        <div class="subida">
+                            <i class='bx bxs-file'></i>
+                            <h6>Licencia de Funcionamiento</h6>
+                            <p>PDF, JPG (Máx. 5MB)</p>
+                        </div>
+                        <div class="subida">
+                            <i class='bx bx-fingerprint'></i>
+                            <h6>
+                                Identificación Fiscal (Tax ID)</h6>
+                            <p>PDF, JPG (Máx. 5MB)</p>
+                        </div>
+                    </div>
+
+                    <!-- Botones de acción -->
+                    <div class="botones">
+                        <button type="button" class="btn btn-cancelar" id="cerrarModal">cancelar</button>
+                        <button id="btn" type="submit" class="btn btn-registar">Registrar Agencia</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <section class="sidebar">
+            <div class="busqueda-agencias">
+                <h1>Lista de Agencias</h1>
+                <h5>Gestion y monitoreo de socios verificados.</h5>
+                <!-- CAMBIO: lista <ol> reemplazada por tabla con 3 columnas -->
+                <div class="tabla-contenedor">
+                    <table class="tabla-agencias">
+                        <thead>
+                            <tr>
+                                <th>ID Agencia</th><!-- CAMBIO: columna para el id comercial -->
+                                <th>Nombre de agencia</th><!-- CAMBIO: columna para el nombre -->
+                                <th>Correo electrónico</th><!-- CAMBIO: columna para el email -->
+                            </tr>
+                        </thead>
+                        <tbody id="lista"><!-- CAMBIO: aquí se agregan las filas desde JavaScript --></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="roles">
+                <div class="roles1">
+                    <i class='bx bx-group'></i> Roles del usuario
+                    <div class="rol">
+                        <p>FULL ACCES</p>
+                        <span>
+                            <b>Administrador</b> <br>
+                            control total del modulo, auditoria y finanzas
+                        </span>
+                    </div>
+                    <div class="rol">
+                        <p>RESTRINGIDO</p>
+                        <span>
+                            <b>Agente de venta</b> <br>
+                            Gestion de Reservas y atencion directa al cliente
+                        </span>
+
+                    </div>
+                    configurar de permisos.
+                </div>
+                <div class="roles2">
+                    <i class='bx bx-shield-plus'></i> <span>Seguridad 2AF</span><br><br>
+                    <b>El cifrado de extremo a extremo
+                        esta activo para todas las
+                        transacciones de datos sencibles</b> <br> <br>
+                    <p>Ajuste de Seguridad</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer" id="soporte">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <span class="brand">EG-TRAVEL</span>
+                <p>Líderes en infraestructura digital para el comercio marítimo internacional y logística de precisión.
+                </p>
+                <div class="social">
+                    <a href="#">in</a>
+                    <a href="#">𝕏</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>COMPAÑÍA</h4>
+                <a href="#">Operaciones de Flota</a>
+                <a href="#">Reporte de Sostenibilidad</a>
+                <a href="#">Facturación</a>
+                <a href="">Análisis</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>LEGAL</h4>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>SOPORTE</h4>
+                <a href="#">Contáctenos</a>
+                <a href="#">Centro de Ayuda</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 EG-TRAVEL Logistics &amp; Travel. Todos los derechos reservados.</p>
+            <p>EG-TRAVEL GLOBAL NETWORK</p>
+        </div>
+    </footer>
+    <script src="./JS/registroAgencia1.js"></script>
+</body>
+
+</html>

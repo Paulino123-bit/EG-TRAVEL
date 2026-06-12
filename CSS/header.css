@@ -1,0 +1,155 @@
+*{
+    font-family: arial;
+}
+:root {
+    --colorAzul: #7ca3c4;
+    --colorAzul2: #0b1c30;
+    --rojo2: #e31b23;
+    --colorgris: gray;
+    --rojo: #bb2040;
+}
+
+body {
+    padding-top: 60px;
+}
+
+header {
+    background-color: white;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    padding: 19px;
+    border-bottom: 2px solid var(--rojo2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+
+}
+
+a.logo {
+    font-size: 25px;
+    font-weight: 900;
+    color: red;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+a.logo h3 {
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex: 1;
+    max-width: 780px;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--colorAzul);
+    transition: 0.2s ease;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+header nav a:hover {
+    color: var(--colorgris);
+    transform: scale(1.2);
+}
+
+header nav a:focus,
+header nav a.active {
+    color: var(--rojo);
+    text-decoration: underline;
+}
+
+.header-registro a {
+    text-decoration: none;
+    color: var(--colorAzul);
+    transition: 0.2s ease;
+    font-weight: 600;
+}
+
+.header-registro a:hover {
+    color: var(--rojo2);
+    transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+    body {
+        padding-top: 90px;
+    }
+
+    header {
+        height: auto;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px 19px;
+    }
+
+    header nav {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 150px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 19px;
+        gap: 12px;
+    }
+
+    a.logo {
+        font-size: 22px;
+    }
+
+    header nav {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    header nav a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 170px;
+    }
+
+    header {
+        padding: 12px 14px;
+        gap: 8px;
+    }
+
+    a.logo {
+        font-size: 19px;
+    }
+
+    header nav {
+        gap: 8px;
+    }
+
+    header nav a {
+        font-size: 13px;
+    }
+}

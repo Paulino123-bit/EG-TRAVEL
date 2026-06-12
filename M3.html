@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EG-TRAVEL — Catálogo Maestro de Rutas</title>
+    <link rel="stylesheet" href="./CSS/M3.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <i class='bx bx-anchor'></i>
+            <h3>E.G.TRAVELS</h3>
+        </div>
+        <nav id="navPrincipal">
+            <a href="./index.html">Inicio</a>
+            <a href="./M2.html" class="active" aria-current="page">Agencia</a>
+            <a href="./M3.html">Rutas</a>
+            <a href="./M4.html">Reserva</a>
+            <a href="./M5.html">Facturacion</a>
+            <a href="./M6.html">Analisis</a>
+            <a href="./M7.html">Soporte</a>
+        </nav>
+        
+    </header>
+
+    <!--  MAIN  -->
+    <section class="seccion1" id="rutas">
+        <div class="seccion-contenido">
+            <p class="seccion-tag">SISTEMAS DE CONECTIVIDAD NACIONAL</p>
+            <h1 class="titulo">Catálogo Maestro de <span>Rutas</span></h1>
+            <p class="descripcion">
+                Explore nuestra red logística de última generación. Conectamos las rutas principales
+                del pais con precisión digital y eficiencia operativa sin precedentes.
+            </p>
+
+            <div class="card1">
+                <div class="mini-card">
+                    <i class='bx bxs-ship'></i>
+                    <div>
+                        <strong>3+ Buques</strong>
+                        <span>FLOTA ACTIVA</span>
+                    </div>
+                </div>
+                <div class="mini-card">
+                    <i class='bx bx-anchor'></i>
+                    <div>
+                        <strong>3 Puertos</strong>
+                        <span>CONEXIONES NACIONALES</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ CATÁLOGO DE RUTAS ═══════════════ -->
+    <section class="section catalogo-section">
+        <div class="section-head">
+            <div>
+                <h2>Catálogo de Rutas</h2>
+                <p>Consulte el detalle de cada corredor marítimo registrado en la red EG-TRAVEL.</p>
+            </div>
+
+        </div>
+
+        <div class="tabla-contenedor">
+            <table class="catalogo-rutas" id="catalogoRutas">
+                <thead>
+                    <tr>
+                        <th>Código de ruta</th>
+                        <th>Nombre de la ruta</th>
+                        <th>Puerto de origen</th>
+                        <th>Puerto destino</th>
+                        <th>Distancia total</th>
+                        <th>Duración total</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoCatalogo"></tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <!-- NAVIERAS Y ALIANZAS-->
+    <section class="section partners-section" id="agencias">
+        <p class="section-tag">STRATEGIC PARTNERS</p>
+        <h2>Navieras y Alianzas Estratégicas</h2>
+        <p class="section-sub">Colaboramos con las agencias nacionales para garantizar la calidad y la logistica en sus
+            viajes.</p>
+
+        <div class="partners-grid">
+            <article class="partner-card">
+                <i class='bx bxs-ship'></i>
+                <div class="partner-info">
+                    <div class="partner-top">
+                        <h3>Viteoca</h3>
+
+                    </div>
+
+                    <div class="partner-stats">
+                        <span><strong>FLOTA:</strong> 2 Buques</span>
+                        <span><strong>BASE:</strong> Malabo, Sampaka</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="partner-card">
+                <i class='bx bxs-ship'></i>
+                <div class="partner-info">
+                    <div class="partner-top">
+                        <h3>San Valentin</h3>
+
+                    </div>
+
+                    <div class="partner-stats">
+                        <span><strong>FLOTA:</strong> 3 Buques</span>
+                        <span><strong>BASE:</strong> Malabo, Caracolas</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- publicidad -->
+    <section class="publicidad-section">
+        <h2>Le esperamos!!</h2>
+        <p>Únase a nuestra comunidad para la eficiencia logistica de sus viajes por el pais con EG-TRAVEL.</p>
+
+    </section>
+
+    <!-- footer -->
+    <footer class="site-footer" id="soporte">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <span class="brand">EG-TRAVEL</span>
+                <p>Líderes en infraestructura digital para el comercio marítimo internacional y logística de precisión.
+                </p>
+                <div class="social">
+                    <a href="#">in</a>
+                    <a href="#">𝕏</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>COMPAÑÍA</h4>
+                <a href="#">Operaciones de Flota</a>
+                <a href="#">Reporte de Sostenibilidad</a>
+                <a href="#">Facturación</a>
+                <a href="">Análisis</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>LEGAL</h4>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>SOPORTE</h4>
+                <a href="#">Contáctenos</a>
+                <a href="#">Centro de Ayuda</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 EG-TRAVEL Logistics &amp; Travel. Todos los derechos reservados.</p>
+            <p>EG-TRAVEL GLOBAL NETWORK</p>
+        </div>
+    </footer>
+
+
+
+
+    <script src="./JS/M3.js"></script>
+</body>
+
+</html>

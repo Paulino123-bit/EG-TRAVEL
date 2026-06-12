@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EG-TRAVEL — Reserva de Camarotes</title>
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/M4.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <a href="./index.html" class="logo">
+            <i class='bx bx-anchor'></i>
+            <h3>E.G.TRAVELS</h3>
+        </a>
+        <nav>
+            <a href="./M2.html">Agencia</a>
+            <a href="./M3.html">Rutas</a>
+            <a href="./M4.html">Reserva</a>
+            <a href="./M5.html">Facturacion</a>
+            <a href="./M6.html">Analisis</a>
+            <a href="./M7.html">Soporte</a>
+        </nav>
+
+    </header>
+    <!-- ═══════════════ CONTENIDO PRINCIPAL ═══════════════ -->
+    <main class="layout">
+        <section class="page-header">
+            <h1>Reserva de Camarotes</h1>
+            <p>Configure su itinerario, seleccione su ubicación preferida a bordo y gestione los detalles de los
+                pasajeros con nuestra terminal de comando de vanguardia.</p>
+        </section>
+        <!-- COLUMNA IZQUIERDA -->
+        <div class="general">
+            <div class="col-main">
+
+                <!-- Selección de cubierta -->
+                <section class="card">
+                    <div class="card-head">
+                        <h2>Selección de Cubierta</h2>
+                        <div class="legend">
+                            <span><i class="dot occupied"></i> Ocupado</span>
+                            <span><i class="dot available"></i> Disponible</span>
+                            <span><i class="dot selected"></i> Seleccionado</span>
+                        </div>
+                    </div>
+
+                    <div class="deck-tabs" id="deckTabs">
+                        <button type="button" class="deck-tab active">CUBIERTA 08</button>
+                        <button type="button" class="deck-tab">CUBIERTA 07</button>
+                    </div>
+
+                    <div class="deck-info">
+                        <span id="deckStats">Cupos disponibles: <strong>5</strong> de 6</span>
+                    </div>
+                    
+                    
+                </section>
+
+                <!-- Datos de pasajeros -->
+                <section class="card">
+                    <div class="card-head">
+                        <h2>Datos de los Pasajeros</h2>
+                        <button type="button" class="add-passenger" id="addPassenger">
+                            <i class='bx bx-plus'></i>
+                            Añadir Pasajero
+                        </button>
+                    </div>
+
+                    <div id="passengersList"></div>
+
+                    <form id="passengerForm" novalidate>
+                        <div class="form-grid">
+                            <div class="field">
+                                <label for="pName">NOMBRE COMPLETO</label>
+                                <input type="text" id="name" placeholder="Javier Mba">
+                                <span class="error" id="pNameError"></span>
+                            </div>
+                            <div class="field">
+                                <label for="pPassport">NÚMERO DE PASAPORTE / ID</label>
+                                <input type="text" id="pasaporte" placeholder="12345678">
+                                <span class="error" id="pPassportError"></span>
+                            </div>
+                            <div class="field">
+                                <label for="pNationality">SALIDA</label>
+                                <select id="pNationality">
+                                    <option >Bata, GQ | 16 OCT, 2026 — 18:00</option>
+                                    <option >Malabo, GQ | 14 OCT, 2026 — 18:00</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="pBirth">LLEGADA</label>
+                                <select id="pBirth">
+                                    <option >Bata, GQ | 20 OCT, 2026 — 08:00</option>
+                                    <option >Malabo, GQ | 10 OCT, 2026 — 08:00</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-save-passenger">Guardar datos del pasajero</button>
+                    </form>
+                </section>
+            </div>
+
+            <!-- COLUMNA DERECHA -->
+            <aside class="col-side">
+
+                <!-- Tarjeta de embarque -->
+                <div class="boarding-pass" id="boardingPass">
+                    <div class="bp-header">
+                        <div>
+                            <span class="bp-tag">TARJETA DE EMBARQUE</span>
+                            <h3>EG-TRAVEL</h3>
+                        </div>
+                        <div class="bp-ship-icon" aria-hidden="true"><i class='bx bx-ship'></i></div>
+                    </div>
+                    <div class="bp-body">
+                        <div class="bp-row"><span>PASAJERO</span><strong id="bpPassenger"> </strong></div>
+                        <div class="bp-row"><span>CABINA</span><strong id="bpCabin"></strong></div>
+                        <div class="bp-row"><span>SALIDA</span><strong id="bpDeparture"> </strong></div>
+                        <div class="bp-row"><span>LLEGADA</span><strong id="bpArrival"> </strong></div>
+
+                        <div class="qr-area">
+                            <img id="qrCode" src="./IMG/QR.jpg" alt="Código QR de la reserva" width="120" height="120">
+                            <p class="res-id" id="resId">RES-ID: EG-882918-X22</p>
+                        </div>
+
+                        <button type="button" class="btn-download" id="downloadPdf">
+                            <i class='bx bxs-download'></i>
+                            DESCARGAR TICKET PDF
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gestión de reserva -->
+                <section class="card management-card">
+                    <h2>Gestión de Reserva</h2>
+                    <button type="button" class="mgmt-item" id="btnModify">
+                        <span class="mgmt-icon"><i class='bx bx-edit'></i></span>
+                        <span class="mgmt-text" id="abrir-modal">Modificar Itinerario</span>
+                        <span class="mgmt-arrow">&gt;</span>
+                    </button>
+                    <button type="button" class="mgmt-item" id="btnRefund">
+                        <span class="mgmt-icon"><i class='bx bx-credit-card'></i></span>
+                        <span class="mgmt-text" id="abrir-modal">Solicitar Reembolso</span>
+                        <span class="mgmt-arrow">&gt;</span>
+                    </button>
+                    <button type="button" class="mgmt-item danger" id="btnCancel">
+                        <span class="mgmt-icon"><i class='bx bx-x'></i></span>
+                        <span class="mgmt-text">Cancelar Reserva</span>
+                        <span class="mgmt-arrow">&gt;</span>
+                    </button>
+                </section>
+        </div>
+
+    </main>
+
+    <!-- ═══════════════ PIE DE PÁGINA ═══════════════ -->
+    <footer class="site-footer" id="soporte">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <span class="brand">EG-TRAVEL</span>
+                <p>Líderes en infraestructura digital para el comercio marítimo internacional y logística de precisión.
+                </p>
+                <div class="social">
+                    <a href="#">in</a>
+                    <a href="#">𝕏</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>COMPAÑÍA</h4>
+                <a href="#">Operaciones de Flota</a>
+                <a href="#">Reporte de Sostenibilidad</a>
+                <a href="#">Facturación</a>
+                <a href="">Análisis</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>LEGAL</h4>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>SOPORTE</h4>
+                <a href="#">Contáctenos</a>
+                <a href="#">Centro de Ayuda</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 EG-TRAVEL Logistics &amp; Travel. Todos los derechos reservados.</p>
+            <p>EG-TRAVEL GLOBAL NETWORK</p>
+        </div>
+    </footer>
+
+    <script src="./JS/m4.js"></script>
+</body>
+
+</html>
