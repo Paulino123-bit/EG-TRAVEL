@@ -5,7 +5,8 @@
     font-family: Arial;
 }
 
-:root {/*paleta de colores principales*/
+:root {
+    /*paleta de colores principales*/
     --colorAzul: #7ca3c4;
     --colorAzul2: #0b1c30;
     --blanco: #ffffff;
@@ -17,14 +18,18 @@
     --colorDorado: #f5b26c;
 
 }
+
 /* estilo de los iconos*/
-i{
+i {
     color: var(--rojo2);
 }
+
 body {
     background-color: white;
-    overflow-x: hidden;                          /* Evita scroll horizontal en móvil */
-    min-height: 100vh;                           /* Altura mínima de toda la página */
+    overflow-x: hidden;
+    /* Evita scroll horizontal en móvil */
+    min-height: 100vh;
+    /* Altura mínima de toda la página */
 }
 
 /*ESTAMOS EDITANDO EL HEADER*/
@@ -58,7 +63,7 @@ nav {
     justify-content: space-between;
     width: 50%;
     position: relative;
-    
+
 }
 
 a {
@@ -86,7 +91,8 @@ a:focus {
     color: var(--rojo);
     text-decoration: underline;
 }
-.header-registro{
+
+.header-registro {
     background: red;
     color: white;
     border: none;
@@ -96,349 +102,387 @@ a:focus {
     border-radius: 4px;
 }
 
-    
+
 
 /*aqui termina el header e iniciamos con los estilos del body*/
 main {
     width: 100%;
-    max-width: 1400px;                           /* Ancho máximo en pantallas grandes */
-    margin: 0 auto;                              /* Centra el contenido en desktop */
+    max-width: 1400px;
+    margin: 0 auto;
     height: auto;
     display: flex;
     flex-direction: column;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 /* ESTILOS DEL  MODAL */
 
 .modal {
-    inset: 0;                                      
-    position: fixed;                               
-    z-index: 1000;                                 /* Superpone header y sidebar */
-    display: none;                                 /* Oculto por defecto */
-    justify-content: center;                       /* Centra el panel horizontalmente */
-    align-items: center;                           /* Centra el panel verticalmente */
-    padding: 16px;                                 /* Margen interno en móvil */
-    background-color: rgba(11, 28, 48, 0.75);      /* Fondo oscuro semitransparente */
-    overflow-y: auto;                              /* Permite scroll si el formulario es largo */
-    -webkit-overflow-scrolling: touch;             /* Scroll suave en iOS */
-    box-sizing: border-box;                        /* Incluye padding en el ancho total */
+    inset: 0;
+    position: fixed;
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+    background-color: rgba(11, 28, 48, 0.75);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
 }
 
 .modal.activo {
-    display: flex;                                 /* Muestra el modal al añadir la clase activo */
+    display: flex;
 }
 
 .modal-contenido {
-    width: 100%;                                   /* Ocupa todo el ancho disponible */
-    max-width: 720px;                              /* Ancho máximo del panel del modal */
-    max-height: calc(100dvh - 32px);               /* Altura máxima con margen vertical */
-    margin: auto;                                  /* Centra el bloque dentro del overlay */
-    overflow-x: hidden;                            /* Evita desbordamiento horizontal */
-    overflow-y: auto;                              /* Scroll interno del panel */
-    border-radius: 12px;                           /* Esquinas redondeadas del panel */
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);    /* Sombra profunda para efecto flotante */
-    box-sizing: border-box;                        
+    width: 100%;
+    max-width: 720px;
+    max-height: calc(100dvh - 32px);
+    margin: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
 }
 
 /* Cabecera del modal con título e introducción */
 .modal .card {
-    background-color: var(--colorAzul2);           /* Fondo azul oscuro corporativo */
-    color: var(--blanco);                          /* Texto claro sobre fondo oscuro */
-    border: none;                                  /* Sin borde en la cabecera */
-    min-height: 120px;                             /* Altura mínima de la cabecera */
-    display: flex;                                 /* Flex para centrar contenido */
-    padding: 24px 32px;                            /* Espaciado interno de la cabecera */
-    flex-direction: column;                        /* Título y párrafo apilados */
-    align-items: center;                           /* Centrado horizontal del texto */
-    justify-content: center;                       /* Centrado vertical del texto */
-    text-align: center;                            /* Alineación centrada del copy */
-    border-top-left-radius: 12px;                  /* Esquina superior izquierda redondeada */
-    border-top-right-radius: 12px;                 /* Esquina superior derecha redondeada */
-    border-bottom: 3px solid var(--rojo2);         /* Línea de acento rojo bajo la cabecera */
+    background-color: var(--colorAzul2);
+    color: var(--blanco);
+    border: none;
+    min-height: 120px;
+    display: flex;
+    padding: 24px 32px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom: 3px solid var(--rojo2);
+
 }
 
 .modal .card h1 {
-    color: var(--blanco);                          
-    font-size: 1.5rem;                            
-    font-weight: 700;                             
-    margin-bottom: 12px;                          
-    line-height: 1.3;                             
+    color: var(--blanco);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.3;
 }
 
 .modal .card p {
-    color: var(--colorgris2);                      /* Descripción en gris claro */
-    font-size: 0.9rem;                             /* Tamaño del texto descriptivo */
-    line-height: 1.5;                              /* Interlineado de la descripción */
-    max-width: 520px;                              /* Ancho máximo para legibilidad */
+    color: var(--colorgris2);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 520px;
+
 }
 
 /* Cuerpo del formulario de registro */
 .modal form {
-    border: none;                                  /* Sin borde externo del formulario */
-    padding: 28px 32px 32px;                       /* Espaciado interno del formulario */
-    display: flex;                                 /* Flex para organizar secciones */
-    flex-direction: column;                        /* Secciones apiladas verticalmente */
-    gap: 20px;                                     /* Separación entre bloques del form */
-    border-bottom-left-radius: 12px;               /* Esquina inferior izquierda redondeada */
-    border-bottom-right-radius: 12px;              /* Esquina inferior derecha redondeada */
-    background-color: var(--blanco);               /* Fondo blanco del cuerpo del modal */
+    border: none;
+    padding: 28px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: var(--blanco);
+
 }
 
 /* Contenedor grid de los campos de entrada */
-.modal form > .input {
-    display: grid;                                 /* Grid para distribuir campos */
-    grid-template-columns: 1fr;                    /* Una columna en móvil */
-    gap: 16px;                                     /* Espacio entre filas de inputs */
+.modal form>.input {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+
 }
 
 
 .modal .input .input {
-    display: flex;                                 /* Flex vertical por campo */
-    flex-direction: column;                        /* Label arriba, input abajo */
-    gap: 6px;                                      /* Separación label-input */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
 }
 
 .modal .label {
-    font-size: 11px;                               /* Tamaño de las etiquetas */
-    font-weight: 600;                              /* Etiquetas en semibold */
-    line-height: 16px;                             /* Altura de línea de etiquetas */
-    letter-spacing: 0.06em;                        /* Espaciado entre letras */
-    text-transform: uppercase;                     /* Etiquetas en mayúsculas */
-    color: var(--colorAzul2);                      /* Color azul oscuro de etiquetas */
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--colorAzul2);
+
 }
 
 .modal .inputs {
-    padding: 12px 14px;                            
-    border: 1px solid #d1d9e6;                      
-    border-radius: 6px;                            
-    font-family: 'Segoe UI', Tahoma, sans-serif;   
-    font-size: 15px;                               
-    color: var(--colorAzul2);                    
-    background-color: #f8fafc;                     /* Fondo gris muy claro del input */
-    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Transición al focus */
-    outline: none;                                 /* Quita outline nativo del navegador */
+    padding: 12px 14px;
+    border: 1px solid #d1d9e6;
+    border-radius: 6px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-size: 15px;
+    color: var(--colorAzul2);
+    background-color: #f8fafc;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+
 }
 
 .modal .inputs::placeholder {
-    color: var(--colorgris2);                      /* Color del texto placeholder */
+    color: var(--colorgris2);
+
 }
 
 .modal .inputs:focus {
-    border-color: var(--rojo2);                    /* Borde rojo al enfocar */
-    box-shadow: 0 0 0 3px rgba(227, 27, 35, 0.15); /* Halo rojo suave al focus */
-    background-color: var(--blanco);               /* Fondo blanco al escribir */
+    border-color: var(--rojo2);
+    box-shadow: 0 0 0 3px rgba(227, 27, 35, 0.15);
+    background-color: var(--blanco);
+
 }
 
 /* Mensajes de validación bajo cada campo */
 .modal .alerta1,
 .modal [id^="alerta"] {
-    font-size: 12px;                               /* Tamaño del mensaje de error */
-    color: var(--rojo);                            /* Color rojo para alertas */
-    min-height: 16px;                              /* Reserva espacio aunque esté vacío */
-    display: none;                                 /* Oculto hasta que JS lo muestre */
+    font-size: 12px;
+    color: var(--rojo);
+    min-height: 16px;
+    display: none;
+
 }
 
 /* Sección de documentos comerciales */
 .modal .doc {
-    margin: 4px 0 0;                               
-    display: flex;                                 
-    align-items: center;                          
-    gap: 10px;                                     
-    padding-top: 8px;                             
-    border-top: 1px solid #e8edf3;                 
+    margin: 4px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #e8edf3;
 }
 
 .modal .doc h4 {
-    font-size: 1.1rem;                             /* Tamaño del título de documentos */
-    color: var(--colorAzul2);                      /* Color del título de documentos */
-    font-weight: 600;                              /* Peso semibold del título */
+    font-size: 1.1rem;
+    color: var(--colorAzul2);
+    font-weight: 600;
+
 }
 
 .modal .doc .bx {
-    font-size: 28px;                               /* Tamaño del icono de subida */
-    color: var(--rojo2);                           /* Icono en rojo corporativo */
+    font-size: 28px;
+    color: var(--rojo2);
+
 }
 
 .modal .doc1 {
-    display: flex;                                 /* Flex para las cajas de subida */
-    flex-direction: column;                        /* Apiladas en móvil */
-    gap: 12px;                                     /* Espacio entre cajas de subida */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
 }
 
 .modal .subida {
-    border: 2px dashed var(--colorgris2);          /* Borde punteado de zona de drop */
-    border-radius: 8px;                            /* Esquinas redondeadas de subida */
-    padding: 20px 16px;                            /* Padding interno de la zona */
-    text-align: center;                            /* Texto centrado en la caja */
-    cursor: pointer;                               /* Cursor de clic en la zona */
-    transition: border-color 0.2s ease, background-color 0.2s ease; /* Hover suave */
-    background-color: #f4f7fb;                     /* Fondo gris azulado claro */
+    border: 2px dashed var(--colorgris2);
+    border-radius: 8px;
+    padding: 20px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    background-color: #f4f7fb;
+
 }
 
 .modal .subida:hover {
-    border-color: var(--rojo2);                    /* Borde rojo al pasar el ratón */
-    background-color: #fff5f5;                     /* Fondo rosado muy suave al hover */
+    border-color: var(--rojo2);
+    background-color: #fff5f5;
+
 }
 
 .modal .subida .bx {
-    font-size: 32px;                               /* Tamaño del icono del documento */
-    color: var(--rojo2);                           /* Icono en rojo corporativo */
+    font-size: 32px;
+    color: var(--rojo2);
+
 }
 
 .modal .subida h6 {
-    font-size: 0.95rem;                            /* Título del tipo de documento */
-    margin-top: 8px;                               /* Separación icono-título */
-    color: var(--colorAzul2);                      /* Color del nombre del documento */
-    font-weight: 600;                              /* Peso semibold del subtítulo */
+    font-size: 0.95rem;
+    margin-top: 8px;
+    color: var(--colorAzul2);
+    font-weight: 600;
+
 }
 
 .modal .subida p {
-    font-size: 11px;                               /* Texto de formatos permitidos */
-    color: var(--colorgris);                       /* Color gris del hint de formato */
-    margin-top: 4px;                               /* Separación título-hint */
+    font-size: 11px;
+    color: var(--colorgris);
+    margin-top: 4px;
+
 }
 
 /* Botones de acción del formulario */
 .modal .botones {
-    margin-top: 8px;                               /* Separación del bloque anterior */
-    justify-content: flex-end;                     /* Botones alineados a la derecha */
-    gap: 12px;                                     /* Espacio entre botones */
-    width: 100%;                                   /* Ancho completo del contenedor */
-    display: flex;                                 /* Flex para los botones en fila */
-    flex-wrap: wrap;                               /* Permite wrap en pantallas pequeñas */
-    padding-top: 16px;                             /* Separación visual superior */
-    border-top: 1px solid #e8edf3;                 /* Línea divisoria sobre botones */
+    margin-top: 8px;
+    justify-content: flex-end;
+    gap: 12px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 16px;
+    border-top: 1px solid #e8edf3;
+
 }
 
 .modal .btn {
-    padding: 10px 24px;                            /* Padding interno de botones */
-    border-radius: 6px;                            /* Esquinas redondeadas de botones */
-    font-family: 'Segoe UI', Tahoma, sans-serif;   /* Fuente coherente con el form */
-    font-weight: 600;                              /* Texto semibold en botones */
-    font-size: 14px;                               /* Tamaño del texto del botón */
-    cursor: pointer;                               /* Cursor de clic */
-    transition: background-color 0.2s ease, transform 0.2s ease; /* Transición hover */
-    border: none;                                  /* Sin borde por defecto */
-    text-transform: capitalize;                    /* Capitaliza texto del botón */
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border: none;
+    text-transform: capitalize;
+
 }
 
 .modal .btn-cancelar {
-    background-color: transparent;                 /* Fondo transparente secundario */
-    border: 1px solid var(--colorAzul2);           /* Borde azul oscuro */
-    color: var(--colorAzul2);                      /* Texto azul oscuro */
+    background-color: transparent;
+    border: 1px solid var(--colorAzul2);
+    color: var(--colorAzul2);
+
 }
 
 .modal .btn-cancelar:hover {
-    background-color: #eef2f7;                     /* Fondo gris claro al hover */
-    transform: translateY(-1px);                   /* Leve elevación al hover */
+    background-color: #eef2f7;
+    transform: translateY(-1px);
+
 }
 
 .modal .btn-registrar,
 .modal .btn-registar {
-    background-color: var(--rojo2);                /* Fondo rojo del botón principal */
-    border: 1px solid var(--rojo2);                /* Borde rojo del botón principal */
-    color: var(--blanco);                          /* Texto blanco en botón principal */
-    min-width: 160px;                              /* Ancho mínimo del botón registrar */
+    background-color: var(--rojo2);
+    border: 1px solid var(--rojo2);
+    color: var(--blanco);
+    min-width: 160px;
+
 }
 
 .modal .btn-registrar:hover,
 .modal .btn-registar:hover {
-    background-color: var(--rojo);                 /* Rojo más oscuro al hover */
-    border-color: var(--rojo);                     /* Borde más oscuro al hover */
-    transform: translateY(-1px);                   /* Leve elevación al hover */
+    background-color: var(--rojo);
+    border-color: var(--rojo);
+    transform: translateY(-1px);
+
 }
 
-/* ============================================
+/* 
     MODAL — RESPONSIVE TABLET (768px+)
-   ============================================ */
+   */
 @media (min-width: 768px) {
     .modal {
-        padding: 24px;                             /* Más aire en tablet y desktop */
+        padding: 24px;
+
     }
 
     .modal-contenido {
-        max-width: 800px;                          /* Panel más ancho en tablet */
-        max-height: auto;          
+        max-width: 800px;
+
+        max-height: auto;
     }
 
-    .modal form > .input {
-        grid-template-columns: 1fr 1fr;            /* Dos columnas de campos en tablet */
+    .modal form>.input {
+        grid-template-columns: 1fr 1fr;
+
     }
 
     .modal .card h1 {
-        font-size: 1.75rem;                        /* Título más grande en tablet */
+        font-size: 1.75rem;
+
     }
 
     .modal .doc1 {
-        flex-direction: row;                       /* Cajas de subida lado a lado */
+        flex-direction: row;
+
     }
 
     .modal .subida {
-        flex: 1;                                   /* Cada caja ocupa mitad del ancho */
+        flex: 1;
+
     }
 
     .modal .botones {
-        flex-wrap: nowrap;                         /* Botones siempre en una fila */
+        flex-wrap: nowrap;
+
     }
 }
 
-/* ============================================
+/*
    MODAL — RESPONSIVE MÓVIL (hasta 480px)
-   ============================================ */
+   */
 @media (max-width: 480px) {
     .modal {
-        padding: 8px;                              /* Menos padding en pantallas pequeñas */
-        align-items: flex-start;                   /* Contenido arriba (mejor con teclado) */
+        padding: 8px;
+        align-items: flex-start;
+
     }
 
     .modal-contenido {
-        max-height: calc(100dvh - 16px);           /* Aprovecha casi toda la pantalla */
-        margin-top: 8px;                           /* Pequeño margen superior */
-        border-radius: 10px;                       /* Esquinas ligeramente más pequeñas */
+        max-height: calc(100dvh - 16px);
+        margin-top: 8px;
+        border-radius: 10px;
+
     }
 
     .modal .card {
-        padding: 16px 20px;                        /* Menos padding en cabecera móvil */
-        min-height: auto;                          /* Altura automática en móvil */
+        padding: 16px 20px;
+        min-height: auto;
+
     }
 
     .modal .card h1 {
-        font-size: 1.25rem;                        /* Título más compacto en móvil */
+        font-size: 1.25rem;
+
     }
 
     .modal form {
-        padding: 20px 16px 24px;                   /* Padding reducido del formulario */
+        padding: 20px 16px 24px;
+
     }
 
     .modal .botones {
-        flex-direction: column;                    /* Botones apilados verticalmente */
+        flex-direction: column;
+
     }
 
     .modal .btn-cancelar,
     .modal .btn-registrar,
     .modal .btn-registar {
-        width: 100%;                               /* Botones a ancho completo en móvil */
-        flex: 1 1 100%;                            /* Ocupan toda la fila disponible */
+        width: 100%;
+        flex: 1 1 100%;
+
     }
 }
 
 /*terminamos con el modal*/
 /* editamos el primer bloque de cajas*/
 .container1 {
-   
-    min-height: 490px;                           /* Altura mínima flexible */
+    min-height: 490px;
     width: 100%;
     max-width: none;
     box-sizing: border-box;
-    padding: 48px 24px;                          /* Padding responsive base */
+    padding: 48px 24px;
     color: var(--blanco);
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;                             /* Apila en pantallas estrechas */
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 32px;  /* Separación entre bloques del hero */
-        animation: fondo 10s linear infinite;
+    gap: 32px;
+    animation: fondo 10s linear infinite;
     -webkit-animation: fondo 10s linear infinite;
 }
 
@@ -469,11 +513,12 @@ main {
 
 
 .container1 h1 {
-    font-size: 65px;      
+    font-size: 65px;
     font-family: Arial, sans-serif;
     font-weight: 700;
     color: var(--blanco);
-    line-height: 1.15;                           /* Interlineado del título hero */
+    line-height: 1.15;
+
 }
 
 .container1 .notificacion {
@@ -481,20 +526,22 @@ main {
     flex-direction: column;
     align-content: center;
     align-self: center;
-    flex: 1 1 320px;                             /* Crece y encoge con mínimo 320px */
-    max-width: 640px;                            /* Ancho máximo del bloque texto */
+    max-width: 640px;
+
 }
 
 .container1 h4 {
-    font-size: clamp(0.8rem, 2vw, 0.95rem);      /* Subtítulo fluido */
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
     font-family: Verdana, sans-serif;
     border-style: none;
-    line-height: 1.6;                            /* Mejor lectura en móvil */
-    max-width: 560px;                            /* Ancho máximo del párrafo */
+    line-height: 1.6;
+    max-width: 560px;
+
 }
 
 .container1 h4 br {
-    display: none;                               /* Oculta saltos forzados en móvil */
+    display: none;
+
 }
 
 .container1 a {
@@ -511,26 +558,30 @@ main {
     -ms-transition: 0.2 ease;
     -o-transition: 0.2 ease;
 }
+
 /*iniciamos con la editacion de las caja registrarse*/
 .container1 #cajaRoja {
     border-style: none;
     background-color: var(--rojo2);
-    width: min(100%, 220px);                     /* Ancho adaptable con tope */
-    height: 44px;                                /* Altura táctil mínima */
-    display: flex;                               /* Centra texto con flex */
+    width: min(100%, 220px);
+    height: 44px;
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     cursor: pointer;
     font-size: 0.95rem;
     transition: 0.2s ease;
-    border-radius: 4px;                          /* Esquinas suaves del botón */
+    border-radius: 4px;
+
 }
- .container1 #cajaRoja a{/*estilos del link */
+
+.container1 #cajaRoja a {
     border-style: none;
     text-decoration: none;
     color: black;
 }
+
 /*efecto al pasar el raton sobre el la caja*/
 .container1 p:hover {
     box-shadow: 0 0 5px;
@@ -540,19 +591,19 @@ main {
     -ms-transform: scale(1.1);
     -o-transform: scale(1.1);
 }
+
 /*panel de informacion*/
 .container1 .panel {
-    width: min(100%, 300px);                     /* Panel adaptable con tope */
+    width: min(100%, 300px);
     min-height: 200px;
     display: flex;
-    background: rgba(11, 28, 48, 0.35);          /* Fondo semitransparente */
+    background: rgba(11, 28, 48, 0.35);
     backdrop-filter: blur(8px);
     padding: 20px;
     text-align: center;
     color: var(--colorgris2);
     flex-direction: column;
     justify-content: center;
-    
     border-left: 5px solid var(--rojo2);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
@@ -561,30 +612,32 @@ main {
 .panel h5 {
     color: var(--rojo2);
     font-weight: bold;
-    font-size: clamp(0.75rem, 2vw, 0.9rem);      /* Etiqueta fluida del panel */
+    font-size: clamp(0.75rem, 2vw, 0.9rem);
+
 }
 
 .panel h1 {
-    font-size: clamp(2.5rem, 8vw, 4rem);         /* Número grande fluido */
+    font-size: clamp(2.5rem, 8vw, 4rem);
     text-shadow: 0 0 10px var(--rojo2);
     line-height: 1;
 }
+
 /*terminamos con la edicion del panel principal de notificacion*/
 .sidebar {
     width: 100%;
-    min-height: auto;                            /* Altura según contenido */
-    padding: 32px 24px;                          /* Padding uniforme */
+    min-height: auto;
+    padding: 32px 24px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;                             /* Apila columnas en móvil */
+    flex-wrap: wrap;
     gap: 24px;
     align-items: flex-start;
 }
 
 .busqueda-agencias {
     border: 2px solid var(--colorDorado);
-    flex: 1 1 400px;                             /* Crece, mínimo ~400px */
-    min-width: 0;                                /* Permite encoger en flex */
+    flex: 1 1 400px;
+    min-width: 0;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -594,56 +647,64 @@ main {
     border-radius: 10px;
 }
 
-/* CAMBIO: contenedor con scroll horizontal si la tabla es muy ancha en móvil */
+
 .tabla-contenedor {
-    width: 100%;                                 /* CAMBIO: ocupa todo el ancho del bloque */
-    margin-top: 16px;                          /* CAMBIO: separación del título */
-    overflow-x: auto;                            /* CAMBIO: scroll horizontal en pantallas pequeñas */
+    width: 100%;
+    margin-top: 16px;
+    overflow-x: auto;
+
 }
 
-/* CAMBIO: estilos de la tabla de agencias */
+
 .tabla-agencias {
-    width: 100%;                                 /* CAMBIO: tabla a ancho completo */
-    border-collapse: collapse;                   /* CAMBIO: une los bordes de celdas */
-    text-align: left;                            /* CAMBIO: texto alineado a la izquierda */
-    font-size: 0.9rem;                           /* CAMBIO: tamaño de letra de la tabla */
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.9rem;
+
 }
 
-/* CAMBIO: encabezados ID, Nombre y Correo */
+
 .tabla-agencias thead th {
-    background-color: var(--colorAzul2);         /* CAMBIO: fondo azul oscuro del encabezado */
-    color: var(--blanco);                        /* CAMBIO: texto blanco en encabezado */
-    padding: 12px 10px;                          /* CAMBIO: espacio interno de encabezados */
-    font-weight: 600;                            /* CAMBIO: texto semibold */
-    border-bottom: 2px solid var(--rojo2);       /* CAMBIO: línea roja bajo encabezado */
+    background-color: var(--colorAzul2);
+    color: var(--blanco);
+    padding: 12px 10px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--rojo2);
+
 }
 
-/* CAMBIO: celdas de cada fila registrada */
+/*celdas de cada fila registrada */
 .tabla-agencias tbody td {
-    padding: 10px;                               /* CAMBIO: espacio interno de celdas */
-    border-bottom: 1px solid #e0e6ed;            /* CAMBIO: línea entre filas */
-    color: var(--colorAzul2);                    /* CAMBIO: color del texto de datos */
-    word-break: break-word;                      /* CAMBIO: evita desbordamiento de texto */
+    padding: 10px;
+    border-bottom: 1px solid #e0e6ed;
+    color: var(--colorAzul2);
+    word-break: break-word;
+
 }
 
-/* CAMBIO: filas alternas para mejor lectura */
+
 .tabla-agencias tbody tr:nth-child(even) {
-    background-color: #f4f7fb;                   /* CAMBIO: fondo gris claro en filas pares */
+    background-color: #f4f7fb;
+
 }
 
-/* CAMBIO: efecto al pasar el ratón sobre una fila */
+
 .tabla-agencias tbody tr:hover {
-    background-color: #eef2f7;                   /* CAMBIO: resalta la fila al hover */
+    background-color: #eef2f7;
+
 }
 
 .busqueda-agencias h1 {
-    font-size: clamp(1.25rem, 3vw, 1.75rem);     /* Título fluido de la lista */
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+
 }
+
 /*caja de roles*/
 .roles {
     display: flex;
     flex-direction: column;
-    flex: 1 1 280px;                             /* Columna lateral flexible */
+    flex: 1 1 280px;
     min-width: 0;
     gap: 19px;
 }
@@ -651,7 +712,7 @@ main {
 .roles .roles1,
 .roles .roles2 {
     width: 100%;
-    min-height: 220px;                           /* Altura mínima, crece con contenido */
+    min-height: 220px;
     height: auto;
     padding: 24px;
     border-radius: 8px;
@@ -675,15 +736,16 @@ main {
 .rol p {
     background-color: var(--rojo2);
     font-size: 10px;
-    width: auto;                                 /* Ancho según contenido */
-    max-width: 120px;                            /* Tope del badge */
-    margin-left: auto;                           /* Alinea badge a la derecha */
+    width: auto;
+    max-width: 120px;
+    margin-left: auto;
     margin-bottom: 8px;
     padding: 4px 8px;
     text-align: center;
     border-radius: 5px;
     color: var(--blanco);
-    position: static;                            /* Sin posicionamiento absoluto */
+    position: static;
+
     left: auto;
 }
 
@@ -695,7 +757,8 @@ main {
     border: 1px solid var(--rojo2);
     color: var(--colorAzul2);
     background-color: var(--blanco);
-    display: flex;                               /* Flex para organizar contenido */
+    display: flex;
+
     flex-direction: column;
 }
 
@@ -714,15 +777,16 @@ main {
     align-content: center;
     text-align: center;
     border-radius: 6px;
-    margin-top: auto;                            /* Empuja botón al fondo de la caja */
-    align-self: center;                          /* Centrado horizontal */
-    position: static;                            /* Sin top/left fijos */
+    margin-top: auto;
+    align-self: center;
+    position: static;
     cursor: pointer;
 }
+
 /*estilos del modal — definidos arriba en la sección MODAL*/
-/* =============================================
+/* 
    RESPONSIVE — TABLET GRANDE (max-width: 1024px)
-   ============================================= */
+*/
 @media (max-width: 1024px) {
     header {
         padding: 12px 16px;
@@ -767,9 +831,9 @@ main {
     }
 }
 
-/* =============================================
+/* 
    RESPONSIVE — TABLET / MÓVIL GRANDE (max-width: 768px)
-   ============================================= */
+   */
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -860,9 +924,9 @@ main {
     }
 }
 
-/* =============================================
+/* 
    RESPONSIVE — MÓVIL PEQUEÑO (max-width: 480px)
-   ============================================= */
+    */
 @media (max-width: 480px) {
     header {
         padding: 10px 12px;
@@ -893,11 +957,12 @@ main {
         padding: 16px 12px;
     }
 
-    /* CAMBIO: tabla más compacta en móvil pequeño */
+
     .tabla-agencias thead th,
     .tabla-agencias tbody td {
-        padding: 8px 6px;                        /* CAMBIO: menos padding en celdas móvil */
-        font-size: 0.8rem;                       /* CAMBIO: letra más pequeña en móvil */
+        padding: 8px 6px;
+        font-size: 0.8rem;
+
     }
 
     .roles .roles1,
@@ -920,9 +985,9 @@ main {
     }
 }
 
-/* =============================================
+/* 
    RESPONSIVE — DESKTOP ANCHO (min-width: 1025px)
-   ============================================= */
+*/
 @media (min-width: 1025px) {
     .container1 h4 br {
         display: inline;

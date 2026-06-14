@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EG-TRAVEL — Centro de Notificaciones y Soporte Pro 2.0</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/M7.css">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <a href="./index.html" class="logo">
+            <i class='bx bx-anchor'></i>
+            <h3>E.G.TRAVELS</h3>
+        </a>
+        <nav>
+            <a href="./index.html">Inicio</a>
+            <a href="./M2.html">Agencia</a>
+            <a href="./M3.html">Rutas</a>
+            <a href="./M4.html">Reserva</a>
+            <a href="./M5.html">Facturacion</a>
+            <a href="./M6.html">Analisis</a>
+            <a href="./M7.html" class="active" aria-current="page">Soporte</a>
+        </nav>
+    </header>
+
+    <div class="page-toolbar">
+        <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="search" id="searchExpedientes" placeholder="Buscar expedientes...">
+        </div>
+        <div class="toolbar-actions">
+            <button type="button" class="icon-btn notify-btn" id="btnBell" aria-label="Notificaciones">
+                🔔<span class="notify-count" id="notifyCount">3</span>
+            </button>
+            <button type="button" class="icon-btn profile" id="openLogin" aria-label="Perfil">👤</button>
+            <button type="button" class="btn-ship" id="btnShip">Enviar ahora</button>
+        </div>
+    </div>
+
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="status-badge"><i class="pulse-dot"></i> SISTEMA ACTIVO</span>
+            <h1>Centro de Notificaciones y Soporte Pro 2.0</h1>
+            <p>Gestión avanzada de comunicaciones críticas y asistencia técnica global EG-TRAVEL.</p>
+        </div>
+    </section>
+
+    <!-- ═══════════════ CONTENIDO PRINCIPAL ═══════════════ -->
+    <main class="main-layout">
+
+        <!-- Columna izquierda -->
+        <div class="col-left">
+
+            <!-- Estado global del sistema -->
+            <section class="card">
+                <div class="card-head">
+                    <h2>Estado Global del Sistema</h2>
+                    <span class="updated" id="lastUpdate">ACTUALIZADO: HACE 2 MINUTOS</span>
+                </div>
+                <div class="status-grid" id="statusGrid">
+                    <div class="status-box">
+                        <span class="status-name">API CLOUD</span>
+                        <span class="status-val">99.98%</span>
+                        <i class="status-dot green"></i>
+                    </div>
+                    <div class="status-box">
+                        <span class="status-name">DATA NODES</span>
+                        <span class="status-val">OPERACIONAL</span>
+                        <i class="status-dot green"></i>
+                    </div>
+                    <div class="status-box">
+                        <span class="status-name">TRACOMA NET</span>
+                        <span class="status-val">LATENCIA</span>
+                        <i class="status-dot yellow"></i>
+                    </div>
+                    <div class="status-box">
+                        <span class="status-name">AUTH SERVICE</span>
+                        <span class="status-val">ESTABLE</span>
+                        <i class="status-dot green"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notificaciones activas -->
+            <section class="card">
+                <div class="card-head">
+                    <h2>Notificaciones Activas</h2>
+                    <button type="button" class="link-red" id="markAllRead">✓✓ Marcar todo leído</button>
+                </div>
+                <div class="notif-list" id="notifList"></div>
+            </section>
+
+            <!-- Centro de ayuda / FAQ -->
+            <section class="card help-card">
+                <div class="card-head">
+                    <h2>Centro de Ayuda</h2>
+                    <button type="button" class="link-red" id="openHelpCenter">Ver guías de uso →</button>
+                </div>
+                <div class="faq-list" id="faqList"></div>
+            </section>
+        </div>
+
+        <!-- Columna derecha -->
+        <aside class="col-right">
+
+            <!-- Mis tickets -->
+            <section class="card">
+                <div class="card-head">
+                    <h2>Mis Tickets</h2>
+                    <span class="badge-open" id="openTicketsBadge">2 Abiertos</span>
+                </div>
+                <div class="ticket-list" id="ticketList"></div>
+                <button type="button" class="btn-outline" id="viewHistory">Ver Historial de Soporte</button>
+                <button type="button" class="btn-new-ticket" id="newTicket">+ Crear nuevo ticket</button>
+            </section>
+
+            <!-- Asistencia rápida -->
+            <section class="assist-card">
+                <h3>Asistencia Rápida</h3>
+                <p>Nuestro sistema inteligente está disponible 24/7 para resolver dudas logísticas inmediatas.</p>
+                <button type="button" class="btn-ai-chat" id="startChat">
+                    <span>🤖</span> Iniciar Chat con AI
+                </button>
+                <button type="button" class="btn-assist" data-topic="logistica">🚛 Preguntas sobre Logística</button>
+                <button type="button" class="btn-assist" data-topic="facturacion">📄 Facturación y Pagos</button>
+                <button type="button" class="btn-assist" data-topic="api">💻 Soporte Técnico API</button>
+            </section>
+
+            <!-- Alertas por correo -->
+            <section class="card alert-config">
+                <h3>Alertas Automáticas</h3>
+                <p>Reciba notificaciones por correo sobre reservas y cambios de itinerario.</p>
+                <form id="alertForm" novalidate>
+                    <div class="field">
+                        <label for="alertEmail">Correo de alertas</label>
+                        <input type="email" id="alertEmail" placeholder="alertas@agencia.com">
+                        <span class="error" id="alertEmailError"></span>
+                    </div>
+                    <label class="check-item"><input type="checkbox" id="alertConfirm" checked> Confirmaciones de reserva</label>
+                    <label class="check-item"><input type="checkbox" id="alertChanges" checked> Cambios de itinerario</label>
+                    <label class="check-item"><input type="checkbox" id="alertCancel" checked> Cancelaciones</label>
+                    <button type="submit" class="btn-save-alerts">Guardar preferencias</button>
+                </form>
+            </section>
+        </aside>
+    </main>
+
+    <!-- ═══════════════ PIE DE PÁGINA ═══════════════ -->
+    <footer class="site-footer" id="soporte">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <span class="brand">EG-TRAVEL</span>
+                <p>Líderes en infraestructura digital para el comercio marítimo internacional y logística de precisión.
+                </p>
+                <div class="social">
+                    <a href="#">in</a>
+                    <a href="#">𝕏</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>COMPAÑÍA</h4>
+                <a href="#">Operaciones de Flota</a>
+                <a href="#">Reporte de Sostenibilidad</a>
+                <a href="#">Facturación</a>
+                <a href="">Análisis</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>LEGAL</h4>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>SOPORTE</h4>
+                <a href="#">Contáctenos</a>
+                <a href="#">Centro de Ayuda</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 EG-TRAVEL Logistics &amp; Travel. Todos los derechos reservados.</p>
+            <p>EG-TRAVEL GLOBAL NETWORK</p>
+        </div>
+    </footer>
+
+    <!-- ═══════════════ MODAL: CHAT AI ═══════════════ -->
+    <div class="modal-overlay hidden" id="chatModal">
+        <div class="modal modal-chat">
+            <button type="button" class="modal-close" data-close="chatModal">&times;</button>
+            <h2>Chat de Asistencia EG-TRAVEL AI</h2>
+            <div class="chat-messages" id="chatMessages">
+                <div class="chat-msg bot">
+                    <span class="chat-avatar">🤖</span>
+                    <p>Hola, soy el asistente de EG-TRAVEL. ¿En qué puedo ayudarle hoy?</p>
+                </div>
+            </div>
+            <form id="chatForm" class="chat-input-row">
+                <input type="text" id="chatInput" placeholder="Escriba su consulta...">
+                <button type="submit" class="btn-send-chat">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ═══════════════ MODAL: NUEVO TICKET ═══════════════ -->
+    <div class="modal-overlay hidden" id="ticketModal">
+        <div class="modal">
+            <button type="button" class="modal-close" data-close="ticketModal">&times;</button>
+            <h2>Crear Ticket de Soporte</h2>
+            <form id="ticketForm" novalidate>
+                <div class="field">
+                    <label for="ticketSubject">Asunto</label>
+                    <input type="text" id="ticketSubject" placeholder="Describa brevemente el problema">
+                    <span class="error" id="ticketSubjectError"></span>
+                </div>
+                <div class="field">
+                    <label for="ticketCategory">Categoría</label>
+                    <select id="ticketCategory">
+                        <option value="">Seleccione categoría</option>
+                        <option>Logística</option>
+                        <option>Facturación</option>
+                        <option>API Técnica</option>
+                        <option>Reservas</option>
+                    </select>
+                    <span class="error" id="ticketCategoryError"></span>
+                </div>
+                <div class="field">
+                    <label for="ticketDesc">Descripción</label>
+                    <textarea id="ticketDesc" rows="4" placeholder="Detalle de la incidencia..."></textarea>
+                    <span class="error" id="ticketDescError"></span>
+                </div>
+                <button type="submit" class="btn-primary">CREAR TICKET</button>
+            </form>
+            <p class="success-box hidden" id="ticketSuccess">Ticket creado correctamente.</p>
+        </div>
+    </div>
+
+    <!-- ═══════════════ MODAL: CENTRO DE AYUDA ═══════════════ -->
+    <div class="modal-overlay hidden" id="helpModal">
+        <div class="modal modal-lg">
+            <button type="button" class="modal-close" data-close="helpModal">&times;</button>
+            <h2>Centro de Ayuda — Guías de Uso</h2>
+            <div class="help-guides" id="helpGuides"></div>
+        </div>
+    </div>
+
+    <!-- ═══════════════ MODAL: HISTORIAL TICKETS ═══════════════ -->
+    <div class="modal-overlay hidden" id="historyModal">
+        <div class="modal modal-lg">
+            <button type="button" class="modal-close" data-close="historyModal">&times;</button>
+            <h2>Historial de Soporte</h2>
+            <div class="history-list" id="historyList"></div>
+        </div>
+    </div>
+
+    <!-- ═══════════════ MODAL: LOGIN ═══════════════ -->
+    <div class="modal-overlay hidden" id="loginModal">
+        <div class="modal">
+            <button type="button" class="modal-close" data-close="loginModal">&times;</button>
+            <div class="modal-view active" id="viewLogin">
+                <h2>Iniciar sesión</h2>
+                <form id="loginForm" novalidate>
+                    <div class="field"><label for="email">Correo</label><input type="email" id="email"><span class="error" id="emailError"></span></div>
+                    <div class="field"><label for="password">Contraseña</label><input type="password" id="password"><span class="error" id="passwordError"></span></div>
+                    <button type="button" class="text-link" id="goForgot">¿Olvidaste tu contraseña?</button>
+                    <button type="submit" class="btn-primary">INICIAR SESIÓN</button>
+                    <p class="modal-switch">¿No tienes cuenta? <button type="button" class="text-link" id="goRegister">Crear cuenta</button></p>
+                </form>
+            </div>
+            <div class="modal-view" id="viewForgot">
+                <button type="button" class="back-btn" id="backLogin1">← Volver</button>
+                <h2>Recuperar contraseña</h2>
+                <form id="forgotForm"><div class="field"><label for="forgotEmail">Correo</label><input type="email" id="forgotEmail"></div><button type="submit" class="btn-primary">ENVIAR</button></form>
+            </div>
+            <div class="modal-view" id="viewRegister">
+                <button type="button" class="back-btn" id="backLogin2">← Volver</button>
+                <h2>Crear cuenta</h2>
+                <form id="registerForm"><div class="field"><label for="regEmail">Correo</label><input type="email" id="regEmail"></div><button type="submit" class="btn-primary">CREAR</button></form>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast hidden" id="toast"></div>
+
+    <script src="./JS/M7.js"></script>
+</body>
+
+</html>

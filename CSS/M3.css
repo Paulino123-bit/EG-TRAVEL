@@ -1,4 +1,4 @@
-/* ── Variables de color (paleta EG-TRAVEL) ── */
+/* Variables de color */
 :root {
     --red: #e31e24;
     --red-dark: #c41220;
@@ -17,13 +17,14 @@
     --colorAzul: #7ca3c4;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 /* estilo de los iconos*/
-i{
+i {
     color: var(--rojo2);
 }
 
@@ -34,6 +35,7 @@ body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
 }
+
 /*ESTILO DE LOS ENLACES*/
 a {
     text-decoration: none;
@@ -52,76 +54,78 @@ button {
     margin: 0 auto;
     padding: 16px 40px 0;
 }
+
 /*ESTAMOS EDITANDO EL HEADER*/
-    header {
-        background-color: white;
-        height: 70px;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 19px;
-        border-bottom: 2px solid var(--rojo2);
-        position: fixed;
-        z-index: 100;
-    }
+header {
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 19px;
+    border-bottom: 2px solid var(--rojo2);
+    position: fixed;
+    z-index: 100;
+}
 
-    .logo {
-        font-size: 25px;
-        font: 900;
-        color: red;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        gap: 15px;
-    }
+.logo {
+    font-size: 25px;
+    font: 900;
+    color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
 
-    nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 50%;
-        position: relative;
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    position: relative;
 
-    }
+}
 
-    a {
-        text-decoration: none;
-        font-size: 18px;
-        color: var(--colorAzul);
-        transition: 0.2 ease;
-        -webkit-transition: 0.2 ease;
-        -moz-transition: 0.2 ease;
-        -ms-transition: 0.2 ease;
-        -o-transition: 0.2 ease;
-    }
+a {
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--colorAzul);
+    transition: 0.2 ease;
+    -webkit-transition: 0.2 ease;
+    -moz-transition: 0.2 ease;
+    -ms-transition: 0.2 ease;
+    -o-transition: 0.2 ease;
+}
 
-    a:hover {
-        /* editamos los efectos que haran los enlaces*/
-        color: var(--colorgris);
-        transform: scale(1.2);
-        -webkit-transform: scale(1.2);
-        -moz-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        -o-transform: scale(1.2);
-    }
+a:hover {
+    /* editamos los efectos que haran los enlaces*/
+    color: var(--colorgris);
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
 
-    a:focus {
-        color: var(--rojo);
-        text-decoration: underline;
-    }
+a:focus {
+    color: var(--rojo);
+    text-decoration: underline;
+}
 
-    .header-registro {
-        background: red;
-        color: white;
-        border: none;
-        font-size: 9px;
-        font-weight: 600;
-        padding: 9px 16px;
-        border-radius: 4px;
-    }
-/* ═══════════════ HERO ═══════════════ */
+.header-registro {
+    background: red;
+    color: white;
+    border: none;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 9px 16px;
+    border-radius: 4px;
+}
+
+/*  body  */
 .seccion1 {
     position: relative;
     height: 490px;
@@ -223,7 +227,7 @@ button {
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* ═══════════════ BARRA DE HERRAMIENTAS ═══════════════ */
+/*  BARRA DE HERRAMIENTAS  */
 .toolbar {
     display: flex;
     align-items: center;
@@ -291,7 +295,7 @@ button {
     height: 16px;
 }
 
-/* ═══════════════ SECCIONES GENERALES ═══════════════ */
+/* SECCIONES GENERALES */
 .section {
     padding: 48px 40px;
 }
@@ -333,7 +337,7 @@ button {
     height: 18px;
 }
 
-/* ═══════════════ CATÁLOGO DE RUTAS ═══════════════ */
+/* CATÁLOGO DE RUTAS*/
 .tabla-contenedor {
     width: 100%;
     overflow-x: auto;
@@ -382,7 +386,7 @@ button {
     font-size: 15px;
 }
 
-/* ═══════════════ ALIANZAS ═══════════════ */
+/* ALIANZAS */
 .partners-section {
     background: var(--bg-light);
     text-align: center;
@@ -487,7 +491,7 @@ button {
     color: var(--blue);
 }
 
-/* ═══════════════ PUBLICIDAD ═══════════════ */
+/*  PUBLICIDAD  */
 .publicidad-section {
     background: var(--red);
     color: var(--white);
@@ -540,7 +544,7 @@ button {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* ═══════════════ FOOTER ═══════════════ */
+/* FOOTER */
 .site-footer {
     background: var(--navy);
     color: rgba(255, 255, 255, 0.7);
@@ -617,7 +621,7 @@ button {
     color: rgba(255, 255, 255, 0.4);
 }
 
-/* ═══════════════ MODALES ═══════════════ */
+/*  MODALES*/
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -664,8 +668,8 @@ button {
     margin-bottom: 6px;
 }
 
-.modal > p,
-.modal-view > p {
+.modal>p,
+.modal-view>p {
     font-size: 14px;
     color: var(--text-muted);
     margin-bottom: 24px;
@@ -811,7 +815,7 @@ button {
     margin-top: 12px;
 }
 
-/* ═══════════════ TOAST ═══════════════ */
+/* TOAST */
 .toast {
     position: fixed;
     bottom: 24px;
@@ -831,7 +835,7 @@ button {
     transform: translateY(0);
 }
 
-/* ═══════════════ RESPONSIVE ═══════════════ */
+/*  RESPONSIVE  */
 @media (max-width: 1024px) {
     .partners-grid {
         grid-template-columns: 1fr;
@@ -868,6 +872,7 @@ button {
 }
 
 @media (max-width: 520px) {
+
     .section,
     .toolbar,
     .seccion-contenido,

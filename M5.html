@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EG-TRAVEL — Centro de Control Financiero</title>
+
+   
+    <link rel="stylesheet" href="./CSS/M5.css">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <a href="./index.html" class="logo">
+            <i class='bx bx-anchor'></i>
+            <h3>E.G.TRAVELS</h3>
+        </a>
+        <nav>
+            <a href="./index.html">Inicio</a><br>
+            <a href="./M2.html">Agencia</a><br>
+            <a href="./M3.html">Rutas</a><br>
+            <a href="./M4.html">Reserva</a><br>
+            <a href="./M5.html" >Facturacion</a><br>
+            <a href="./M6.html">Analisis</a><br>
+            <a href="./M7.html">Soporte</a><br>
+        </nav>
+        <div></div>
+        <div></div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Centro de Control Financiero</h1>
+            <p>Gestión avanzada de activos transaccionales y facturación estratégica en tiempo real para operaciones logísticas globales.</p>
+        </div>
+    </section>
+
+    
+    <section class="metrics-row">
+        <article class="metric-card">
+            <div class="metric-top">
+                <span class="metric-label">Balance Pendiente</span>
+                <span class="metric-icon red"><i class='bx bx-wallet'></i></span>
+            </div>
+            <p class="metric-value" id="pendingBalance">$142,580.00</p>
+            <span class="metric-trend up">↑ +12.5% vs mes anterior</span>
+        </article>
+
+        <article class="metric-card">
+            <div class="metric-top">
+                <span class="metric-label">Facturas Pagadas</span>
+                <span class="metric-icon blue"><i class='bx bx-credit-card'></i></span>
+            </div>
+            <p class="metric-value" id="paidTotal">$892,300.00</p>
+            <span class="metric-sub">✓ <span id="paidCount">42</span> transacciones completadas</span>
+        </article>
+
+        <article class="metric-card">
+            <div class="metric-top">
+                <span class="metric-label">Crédito Disponible</span>
+                <span class="metric-icon blue"><i class='bx bx-money'></i></span>
+            </div>
+            <p class="metric-value" id="creditAvailable">$2,500,000</p>
+            <div class="credit-bar">
+                <div class="credit-fill" id="creditFill" style="width: 22%"></div>
+            </div>
+            <button type="button" class="link-sm" id="manageCredit">Gestionar crédito y prepago →</button>
+        </article>
+    </section>
+
+    
+    <main class="main-layout">
+
+        <!-- Columna izquierda: transacciones -->
+        <section class="transactions-panel">
+            <div class="panel-head">
+                <h2>Libro de Transacciones Recientes</h2>
+                <button type="button" class="link-red" id="viewHistory">Ver Historial Completo →</button>
+            </div>
+
+            <div class="table-wrap">
+                <table class="transactions-table" id="transactionsTable">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox" id="selectAll" title="Seleccionar todas"></th>
+                            <th>FACTURA ID</th>
+                            <th>FECHA</th>
+                            <th>CONCEPTO</th>
+                            <th>MONTO</th>
+                            <th>ESTADO</th>
+                            <th>ACCIONES</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionsBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Columna derecha: pagos y documentos -->
+        <aside class="sidebar">
+
+            <div class="pay-card">
+                <span class="pay-label">REALIZE SUS PAGOS</span>
+                <p class="pay-amount" id="payTotal">elija el metodo que mas le guste!</p>
+                <p class="pay-desc">Seleccione las facturas que desea liquidar de forma inmediata con su línea de crédito EG-TRAVEL.</p>
+                <button type="button" class="btn-pay" id="executePayment">
+                    <span></span> EJECUTAR PAGO</button>
+            </div>
+
+            <div class="docs-card">
+                <h3>GESTIÓN DE DOCUMENTOS</h3>
+                <div class="doc-item" id="docPdf">
+                    <span class="doc-icon pdf">PDF</span>
+                    <div class="doc-info">
+                        <strong>PDF_Report_Oct24.pdf</strong>
+                        <span>Reporte mensual de finanzas</span>
+                    </div>
+                    <button type="button" class="doc-download" data-file="PDF_Report_Oct24.pdf" aria-label="Descargar PDF">⬇</button>
+                </div>
+                <div class="doc-item" id="docXml">
+                    <span class="doc-icon xml">&lt;&gt;</span>
+                    <div class="doc-info">
+                        <strong>XML_Lote_772.xml</strong>
+                        <span>Facturación electrónica SAT</span>
+                    </div>
+                    <button type="button" class="doc-download" data-file="XML_Lote_772.xml" aria-label="Descargar XML">⬇</button>
+                </div>
+                <button type="button" class="btn-generate" id="generateInvoice">+ Generar factura automática</button>
+            </div>
+        </aside>
+    </main>
+
+    <!-- ═══════════════ SEGURIDAD ═══════════════ -->
+    <section class="security-row">
+        <div class="security-item">
+            
+            <div>
+                <strong>SSL Secure</strong>
+                <span>Cifrado de extremo a extremo</span>
+            </div>
+        </div>
+        <div class="security-item">
+            
+            <div>
+                <strong>AES-256</strong>
+                <span>Estándar bancario de grado</span>
+            </div>
+        </div>
+        <div class="security-item">
+            
+            <div>
+                <strong>PCI-DSS</strong>
+                <span>Cumplimiento global marítimo</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ PIE DE PÁGINA ═══════════════ -->
+    <footer class="site-footer" id="soporte">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <span class="brand">EG-TRAVEL</span>
+                <p>Líderes en infraestructura digital para el comercio marítimo internacional y logística de precisión.
+                </p>
+                <div class="social">
+                    <a href="#">in</a>
+                    <a href="#">𝕏</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>COMPAÑÍA</h4>
+                <a href="#">Operaciones de Flota</a>
+                <a href="#">Reporte de Sostenibilidad</a>
+                <a href="#">Facturación</a>
+                <a href="">Análisis</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>LEGAL</h4>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>SOPORTE</h4>
+                <a href="#">Contáctenos</a>
+                <a href="#">Centro de Ayuda</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 EG-TRAVEL Logistics &amp; Travel. Todos los derechos reservados.</p>
+            <p>EG-TRAVEL GLOBAL NETWORK</p>
+        </div>
+    </footer>
+
+    <!-- ═══════════════ MODAL: PASARELA DE PAGOS ═══════════════ -->
+    <div class="modal-overlay hidden" id="paymentModal">
+        <div class="modal modal-lg">
+            <button type="button" class="modal-close" data-close="paymentModal">&times;</button>
+            <h2>Pasarela de Pagos Segura</h2>
+            <p class="modal-desc">Conexión cifrada SSL · Cumplimiento PCI-DSS</p>
+
+            <div class="payment-methods" id="paymentMethods">
+                <button type="button" class="method-btn active" data-method="card"><i class='bx bxs-credit-card' ></i>Tarjeta</button>
+                <button type="button" class="method-btn" data-method="transfer"><i class='bx bxs-bank' ></i> Transferencia</button>
+                <button type="button" class="method-btn" data-method="online"><i class='bx bx-world'></i> Pago en línea</button>
+            </div>
+
+            <!-- Formulario: Tarjeta -->
+            <form id="cardForm" class="payment-form" novalidate>
+                <div class="field">
+                    <label for="cardNumber">Número de tarjeta</label>
+                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                    <span class="error" id="cardNumberError"></span>
+                </div>
+                <div class="form-row-2">
+                    <div class="field">
+                        <label for="cardExpiry">Vencimiento</label>
+                        <input type="text" id="cardExpiry" placeholder="MM/AA" maxlength="5">
+                        <span class="error" id="cardExpiryError"></span>
+                    </div>
+                    <div class="field">
+                        <label for="cardCvv">CVV</label>
+                        <input type="text" id="cardCvv" placeholder="123" maxlength="4">
+                        <span class="error" id="cardCvvError"></span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="cardName">Titular de la tarjeta</label>
+                    <input type="text" id="cardName" placeholder="Nombre como aparece en la tarjeta">
+                    <span class="error" id="cardNameError"></span>
+                </div>
+            </form>
+
+            <!-- Formulario: Transferencia -->
+            <form id="transferForm" class="payment-form hidden" novalidate>
+                <div class="field">
+                    <label for="bankName">Banco</label>
+                    <select id="bankName">
+                        <option value="">Seleccione un banco</option>
+                        <option>Ecobank</option>
+                        <option>Bange</option>
+                        <option>BGFBANK</option>
+                        <option>CCEIBANK</option>
+                        <option>Societte General</option>
+                    </select>
+                    <span class="error" id="bankNameError"></span>
+                </div>
+                <div class="field">
+                    <label for="accountNumber">Número de cuenta</label>
+                    <input type="text" id="accountNumber" placeholder="XXXX-XXXX-XXXX">
+                    <span class="error" id="accountNumberError"></span>
+                </div>
+                <div class="field">
+                    <label for="reference">Referencia de transferencia</label>
+                    <input type="text" id="reference" placeholder="REF-2024-XXXXX">
+                    <span class="error" id="referenceError"></span>
+                </div>
+            </form>
+
+            <!-- Formulario: Pago en línea -->
+            <form id="onlineForm" class="payment-form hidden" novalidate>
+                <div class="field">
+                    <label for="onlineProvider">Proveedor de pago</label>
+                    <select id="onlineProvider">
+                        <option value="">Seleccione proveedor</option>
+                        <option>PayPal Business</option>
+                        <option>Stripe Maritime</option>
+                        <option>Wirex Global</option>
+                    </select>
+                    <span class="error" id="onlineProviderError"></span>
+                </div>
+                <div class="field">
+                    <label for="onlineEmail">Correo de la cuenta</label>
+                    <input type="email" id="onlineEmail" placeholder="pagos@agencia.com">
+                    <span class="error" id="onlineEmailError"></span>
+                </div>
+            </form>
+
+            <div class="payment-summary">
+                <span>Monto a pagar:</span>
+            </div>
+
+            <button type="button" class="btn-primary" id="confirmPayment">CONFIRMAR PAGO SEGURO</button>
+            <p class="pci-note"> Sus datos están protegidos con cifrado AES-256 y estándares PCI-DSS</p>
+        </div>
+    </div>
+
+    <!-- ═══════════════ MODAL: GENERAR FACTURA ═══════════════ -->
+    <div class="modal-overlay hidden" id="invoiceModal">
+        <div class="modal">
+            <button type="button" class="modal-close" data-close="invoiceModal">&times;</button>
+            <h2>Generar Factura Automática</h2>
+            <form id="invoiceForm" novalidate>
+                <div class="field">
+                    <label for="invoiceAgency">Agencia</label>
+                    <input type="text" id="invoiceAgency" placeholder="Nombre de la agencia">
+                    <span class="error" id="invoiceAgencyError"></span>
+                </div>
+                <div class="field">
+                    <label for="invoiceConcept">Concepto</label>
+                    <input type="text" id="invoiceConcept" placeholder="Ej: Flete Bata-Malabo">
+                    <span class="error" id="invoiceConceptError"></span>
+                </div>
+                <div class="field">
+                    <label for="invoiceAmount">Monto (XAF)</label>
+                    <input type="number" id="invoiceAmount" placeholder="0.00" min="1" step="0.01">
+                    <span class="error" id="invoiceAmountError"></span>
+                </div>
+                <div class="field">
+                    <label for="invoiceType">Tipo de comprobante</label>
+                    <select id="invoiceType">
+                        <option value="pdf">Factura PDF</option>
+                        <option value="xml">Comprobante fiscal XML (SAT)</option>
+                        <option value="both">Ambos (PDF + XML)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">GENERAR COMPROBANTE</button>
+            </form>
+            <p class="success-box hidden" id="invoiceSuccess">Factura generada y añadida al libro de transacciones.</p>
+        </div>
+    </div>
+
+
+    
+
+    <script src="./JS/M5.js"></script>
+    <script src="./JS/cliente.js"></script>
+</body>
+
+</html>

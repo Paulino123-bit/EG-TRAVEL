@@ -109,8 +109,8 @@ document.getElementById("passengerForm").addEventListener("submit", function(e) 
 
     // Insertar datos en la estructura
     insertarDato("bpPassenger", nombre);
-    insertarDato("bpCabin", pasaporte);       // Aquí puedes decidir si mostrar pasaporte o cabina real
-    insertarDato("bpDeparture", llegada); // Ejemplo: nacionalidad como salida
-    insertarDato("bpArrival", salida);     // Ejemplo: fecha de nacimiento como llegada
+    insertarDato("bpCabin", pasaporte);       
+    insertarDato("bpDeparture", llegada); 
+    insertarDato("bpArrival", salida);    
 });
 

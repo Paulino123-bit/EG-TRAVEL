@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EG-TRAVEL</title>
+   
+    <link rel="stylesheet" href="./CSS/M6.css">
+    <link rel="stylesheet" href="./CSS/header.css">
+    <link rel="stylesheet" href="./CSS/footer.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <a href="./index.html" class="logo">
+            <i class='bx bx-anchor'></i>
+            <h3>E.G.TRAVELS</h3>
+        </a>
+        <nav>
+            <a href="./index.html">Inicio</a><br>
+            <a href="./M2.html">Agencia</a><br>
+            <a href="./M3.html">Rutas</a><br>
+            <a href="./M4.html">Reserva</a><br>
+            <a href="./M5.html">Facturacion</a><br>
+            <a href="./M6.html" >Analisis</a><br>
+            <a href="./M7.html">Soporte</a>
+        </nav>
+        <div></div>
+    </header>
+
+    <!--  BODY -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Centro de Inteligencia y Análisis </h1>
+            <p>Monitoreo estratégico y métricas de rendimiento global en tiempo real para una logística sin fronteras.</p>
+        </div>
+    </section>
+
+    <!-- ═══════════════ KPIs ═══════════════ -->
+    <section class="kpi-row">
+        <article class="kpi-card">
+            <div class="kpi-accent"></div>
+            <div class="kpi-body">
+                <div class="kpi-top">
+                    <span class="kpi-label">VOLUMEN DE CARGA (TEUS)</span>
+                    
+                </div>
+                <p class="kpi-value" id="kpiVolume">24.5k</p>
+                <span class="kpi-trend up" id="kpiVolumeTrend">↑ +15%</span>
+            </div>
+        </article>
+        <article class="kpi-card">
+            <div class="kpi-accent"></div>
+            <div class="kpi-body">
+                <div class="kpi-top">
+                    <span class="kpi-label">EFICIENCIA OPERATIVA</span>
+                    
+                </div>
+                <p class="kpi-value" id="kpiEfficiency">98.2%</p>
+                <span class="kpi-badge optimal">● Optimal</span>
+            </div>
+        </article>
+        <article class="kpi-card">
+            <div class="kpi-accent"></div>
+            <div class="kpi-body">
+                <div class="kpi-top">
+                    <span class="kpi-label">RUTAS ACTIVAS</span>
+                   
+                </div>
+                <p class="kpi-value" id="kpiRoutes">142</p>
+                <span class="kpi-sub">Globalmente</span>
+            </div>
+        </article>
+        <article class="kpi-card">
+            <div class="kpi-accent"></div>
+            <div class="kpi-body">
+                <div class="kpi-top">
+                    <span class="kpi-label">TIEMPO MEDIO DE TRÁNSITO</span>
+                    
+                </div>
+                <p class="kpi-value" id="kpiTransit">18.4 días</p>
+                <span class="kpi-trend down" id="kpiTransitTrend">↘ -1.2d</span>
+            </div>
+        </article>
+    </section>
+
+    <!-- ═══════════════ FILTROS DE REPORTES ═══════════════ -->
+    <section class="filters-bar">
+        <h2>Filtros de Reportes</h2>
+        <form id="filterForm" class="filters-form">
+            <div class="filter-field">
+                <label for="filterRoute">Ruta</label>
+                <select id="filterRoute">
+                    <option value="all">Todas las rutas</option>
+                    <option>Malabo → Bata</option>
+                    <option>Malabo → Annobon</option>
+                    <option>Malabo → Duoala</option>
+                    
+                </select>
+            </div>
+            <div class="filter-field">
+                <label for="filterCarrier">Naviera</label>
+                <select id="filterCarrier">
+                    <option value="all">Todas las navieras</option>
+                    <option>San valentin</option>
+                    <option>Viteoca</option>
+                    <option>Djibloho</option>
+                </select>
+            </div>
+            <div class="filter-field">
+                <label for="filterAgent">Agente</label>
+                <select id="filterAgent">
+                    <option value="all">Todos los agentes</option>
+                    <option>Carlos Miguel</option>
+                    <option>Ana Rosa</option>
+                    <option>Luis pablo</option>
+                </select>
+            </div>
+            <div class="filter-field">
+                <label for="filterPeriod">Periodo</label>
+                <select id="filterPeriod">
+                    <option value="month">Último mes</option>
+                    <option value="quarter">Último trimestre</option>
+                    <option value="year">Último año</option>
+                    <option value="season">Por temporada</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-filter">Aplicar filtros</button>
+        </form>
+    </section>
+
+    <!-- ═══════════════ CONTENIDO PRINCIPAL ═══════════════ -->
+    <main class="dashboard-layout">
+
+        <!-- Columna izquierda -->
+        <div class="col-left">
+
+            <!-- Gráfico de barras -->
+            <section class="panel">
+                <div class="panel-head">
+                    <h3>Tendencias de Exportación Mensual</h3>
+                    <div class="chart-legend">
+                        <span><i class="dot red"></i>  Red</span>
+                        <span><i class="dot navy"></i>  Blue</span>
+                    </div>
+                </div>
+                <div class="bar-chart" id="barChart"></div>
+            </section>
+
+            <!-- Mapa de densidad -->
+            <section class="panel map-panel">
+                <div class="panel-head">
+                    <div>
+                        <h3>Mapa de Densidad de Rutas Globales</h3>
+                        <p class="panel-sub">VISUALIZACIÓN EN VIVO DE TRÁFICO MARÍTIMO</p>
+                    </div>
+                </div>
+                <div class="world-map" id="worldMap">
+                    
+                        <span><i class="dot critical-dot"></i> Puerto Crítico</span>
+                        <span><i class="dot stable-dot"></i> Puerto Estable</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Análisis de ocupación y rutas más vendidas -->
+            <section class="panel">
+                <div class="panel-head">
+                    <h3>Análisis de Ocupación y Rutas Más Vendidas</h3>
+                </div>
+                <div class="analysis-grid">
+                    <div class="occupancy-list" id="occupancyList"></div>
+                    <div class="top-routes" id="topRoutes"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Columna derecha -->
+        <aside class="col-right">
+
+            <!-- Donut chart -->
+            <section class="panel">
+                <h3>Distribución por Naviera</h3>
+                <div class="donut-wrap">
+                    <div class="donut-chart" id="donutChart">
+                        <div class="donut-hole">
+                            <strong>100%</strong>
+                            <span>Total Fleet</span>
+                        </div>
+                    </div>
+                    <ul class="donut-legend" id="donutLegend"></ul>
+                </div>
+            </section>
+
+            <!-- Generador de reportes -->
+            <section class="report-generator">
+                <h3>Generador de Reportes Ejecutivos</h3>
+                <p>Seleccione el formato y periodo para consolidar la inteligencia operativa de EG-TRAVEL.</p>
+
+                <div class="season-select">
+                    <label for="seasonProjection">Proyección por temporada</label>
+                    <select id="seasonProjection">
+                        <option value="alta">Temporada Alta (Jun-Ago)</option>
+                        <option value="media">Temporada Media (Mar-May)</option>
+                        <option value="baja">Temporada Baja (Sep-Feb)</option>
+                    </select>
+                </div>
+
+                <button type="button" class="btn-export" id="exportPdf">
+                    <span>📄</span> Exportar PDF
+                </button>
+                <button type="button" class="btn-export" id="exportExcel">
+                    <span>📊</span> Exportar Excel (XML)
+                </button>
+
+                <div class="email-config">
+                    <label>CONFIGURACIÓN DE ENVÍO</label>
+                    <div class="email-row">
+                        <input type="email" id="reportEmail" placeholder="email@eg-travel.logistics">
+                        <button type="button" class="btn-send" id="sendReport" aria-label="Enviar reporte">▶</button>
+                    </div>
+                    <span class="error" id="emailError"></span>
+                </div>
+            </section>
+        </aside>
+    </main>
+
+    <!-- ═══════════════ PIE DE PÁGINA ═══════════════ -->
+    <footer class="site-footer" id="soporte">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <span class="brand">EG-TRAVEL</span>
+                <p>Líderes en infraestructura digital para el comercio marítimo internacional y logística de precisión.
+                </p>
+                <div class="social">
+                    <a href="#">in</a>
+                    <a href="#">𝕏</a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>COMPAÑÍA</h4>
+                <a href="#">Operaciones de Flota</a>
+                <a href="#">Reporte de Sostenibilidad</a>
+                <a href="#">Facturación</a>
+                <a href="">Análisis</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>LEGAL</h4>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Servicio</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>SOPORTE</h4>
+                <a href="#">Contáctenos</a>
+                <a href="#">Centro de Ayuda</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 EG-TRAVEL Logistics &amp; Travel. Todos los derechos reservados.</p>
+            <p>EG-TRAVEL GLOBAL NETWORK</p>
+        </div>
+    </footer>
+
+    <!-- ═══════════════ MODAL LOGIN ═══════════════ -->
+    <div class="modal-overlay hidden" id="loginModal">
+        <div class="modal">
+            <button type="button" class="modal-close" data-close="loginModal">&times;</button>
+            <div class="modal-view active" id="viewLogin">
+                <h2>Iniciar sesión</h2>
+                <form id="loginForm" novalidate>
+                    <div class="field"><label for="email">Correo</label><input type="email" id="email"><span class="error" id="loginEmailError"></span></div>
+                    <div class="field"><label for="password">Contraseña</label><input type="password" id="password"><span class="error" id="loginPassError"></span></div>
+                    <button type="button" class="text-link" id="goForgot">¿Olvidaste tu contraseña?</button>
+                    <button type="submit" class="btn-primary">INICIAR SESIÓN</button>
+                    <p class="modal-switch">¿No tienes cuenta? <button type="button" class="text-link" id="goRegister">Crear cuenta</button></p>
+                </form>
+            </div>
+            <div class="modal-view" id="viewForgot">
+                <button type="button" class="back-btn" id="backLogin1">← Volver</button>
+                <h2>Recuperar contraseña</h2>
+                <form id="forgotForm"><div class="field"><label for="forgotEmail">Correo</label><input type="email" id="forgotEmail"></div><button type="submit" class="btn-primary">ENVIAR</button></form>
+            </div>
+            <div class="modal-view" id="viewRegister">
+                <button type="button" class="back-btn" id="backLogin2">← Volver</button>
+                <h2>Crear cuenta</h2>
+                <form id="registerForm"><div class="field"><label for="regEmail">Correo</label><input type="email" id="regEmail"></div><button type="submit" class="btn-primary">CREAR</button></form>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast hidden" id="toast"></div>
+    <div class="live-badge" id="liveBadge">● EN VIVO</div>
+
+    <script src="./JS/M6.js"></script>
+</body>
+
+</html>
